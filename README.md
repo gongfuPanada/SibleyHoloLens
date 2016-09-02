@@ -73,13 +73,6 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * Bluetooth gamepads that are not the Xbox One S Wireless Controller will be hit-or-miss.
 * Developing for HoloLens
   * [Development overview](https://developer.microsoft.com/en-us/windows/holographic/development_overview) - (STM)
-    * Basics
-      * [World coordinates](https://developer.microsoft.com/en-us/windows/holographic/coordinate_systems)
-      * [Gaze input](https://developer.microsoft.com/en-us/windows/holographic/gaze)
-      * [Gesture input](https://developer.microsoft.com/en-us/windows/holographic/gestures)
-      * [Voice input](https://developer.microsoft.com/en-us/windows/holographic/voice_input)
-      * [Spatial sound](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound)
-      * [Spatial mapping](https://developer.microsoft.com/en-us/windows/holographic/spatial_mapping)
     * [Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
   * [App model](https://developer.microsoft.com/en-us/windows/holographic/app_model)
   * [Install the tools](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools) - (STM)
@@ -93,6 +86,34 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Release notes](https://developer.microsoft.com/en-us/windows/holographic/release_notes)
   * [Known issues](https://developer.microsoft.com/en-us/windows/holographic/known_issues) - (STM)
     * Use a Bluetooth keyboard to enter WiFi passwords.
+* Building blocks of Holographic apps
+  * [World coordinates](https://developer.microsoft.com/en-us/windows/holographic/coordinate_systems)
+  * [Gaze input](https://developer.microsoft.com/en-us/windows/holographic/gaze)
+  * [Gesture input](https://developer.microsoft.com/en-us/windows/holographic/gestures)
+  * [Voice input](https://developer.microsoft.com/en-us/windows/holographic/voice_input)
+  * [Spatial sound](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound)
+  * [Spatial mapping](https://developer.microsoft.com/en-us/windows/holographic/spatial_mapping)
+* Building 2D apps
+  * [Building 2D apps](https://developer.microsoft.com/en-us/windows/holographic/building_2d_apps)
+  * [Current limitations for apps using APIs from the shell](https://developer.microsoft.com/en-us/windows/holographic/current_limitations_for_apps_using_apis_from_the_shell)
+* Building holographic apps with Unity
+  * [Unity development overview](https://developer.microsoft.com/en-us/windows/holographic/unity_development_overview)
+  * [Recommended settings for Unity](https://developer.microsoft.com/en-us/windows/holographic/recommended_settings_for_unity)
+  * [Performance recommendations for Unity](https://developer.microsoft.com/en-us/windows/holographic/performance_recommendations_for_unity)
+  * [Exporting and building a Unity Visual Studio solution](https://developer.microsoft.com/en-us/windows/holographic/exporting_and_building_a_unity_visual_studio_solution)
+  * [Best practices working with Unity and Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/best_practices_for_working_with_unity_and_visual_studio)
+* Designing hologram
+  * [Designing for mixed reality](https://developer.microsoft.com/en-us/windows/holographic/designing_for_mixed_reality)
+  * [Types of holographic apps](https://developer.microsoft.com/en-us/windows/holographic/types_of_holographic_apps)
+  * [Cursor](https://developer.microsoft.com/en-us/windows/holographic/cursors)
+  * [Gaze targeting](https://developer.microsoft.com/en-us/windows/holographic/gaze_targeting)
+  * [Gesture design](https://developer.microsoft.com/en-us/windows/holographic/gesture_design)
+  * [Voice design](https://developer.microsoft.com/en-us/windows/holographic/voice_design)
+  * [Spatial sound design](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound_design)
+  * [Spatial mapping design](https://developer.microsoft.com/en-us/windows/holographic/spatial_mapping_design)
+  * [Color design](https://developer.microsoft.com/en-us/windows/holographic/color_design)
+  * [Updating your existing universal app for HoloLens]https://developer.microsoft.com/en-us/windows/holographic/updating_your_existing_universal_app_for_hololens)
+* [Case studies](https://developer.microsoft.com/en-us/windows/holographic/case_studies)
 * Unity HoloLens Forum
   * [Known issues](http://forum.unity3d.com/threads/known-issues.394627/) - (STM)
     * D3D is the recommended build type over XAML because XAML apps sometimes fail to start. However, this also prevents use with the virtual keyboard.
