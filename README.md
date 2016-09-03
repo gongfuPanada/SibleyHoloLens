@@ -61,7 +61,7 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * 64GB of storage.
     * 2GB of RAM.
   * [HoloLens shell overview](https://developer.microsoft.com/en-us/windows/holographic/hololens_shell_overview) - (STM)
-    * Apps are either standard 2D or Holographic.
+    * App views are either standard 2D or Holographic.
     * Only one Holographic app is allowed at a time.
     * Multiple 2D apps are allowed to run.
     * Holographic apps that need to use the virtual keyboard have to first switch to 2D mode.
@@ -74,7 +74,16 @@ An augmented reality application using the Microsoft HoloLens where a person can
 * Developing for HoloLens
   * [Development overview](https://developer.microsoft.com/en-us/windows/holographic/development_overview) - (STM)
     * [Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
-  * [App model](https://developer.microsoft.com/en-us/windows/holographic/app_model)
+  * [App model](https://developer.microsoft.com/en-us/windows/holographic/app_model) - (STM)
+    * It's all just standard Universal Windows Platform apps.
+    * Only one app runs at a time.
+    * Multiple instances of a single app are treated as just different "entry points" into the app. It's only one app.
+    * Switching between instances of a single app causes that app to be activated with different TileIds.
+    * Switching between different apps causes the last app to be suspended and the next app to resume.
+    * A single app can have multiple views, and they can be either holographic or 2D.
+    * (some details on switching view modes that I don't yet understand, will need to reference in the future.)
+    * 2D app views are a fixed resolution and aspect ratio. Resizing them just makes them bigger/"zoomed in".
+    * Dealing with file saving and loading is possible, but sounds super annoying.
   * [Install the tools](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools) - (STM)
   * [Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/using_visual_studio)
   * [Using the HoloLens emulator](https://developer.microsoft.com/en-us/windows/holographic/using_the_hololens_emulator)
@@ -112,7 +121,7 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Spatial sound design](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound_design)
   * [Spatial mapping design](https://developer.microsoft.com/en-us/windows/holographic/spatial_mapping_design)
   * [Color design](https://developer.microsoft.com/en-us/windows/holographic/color_design)
-  * [Updating your existing universal app for HoloLens]https://developer.microsoft.com/en-us/windows/holographic/updating_your_existing_universal_app_for_hololens)
+  * [Updating your existing universal app for HoloLens](https://developer.microsoft.com/en-us/windows/holographic/updating_your_existing_universal_app_for_hololens)
 * [Case studies](https://developer.microsoft.com/en-us/windows/holographic/case_studies)
 * Unity HoloLens Forum
   * [Known issues](http://forum.unity3d.com/threads/known-issues.394627/) - (STM)
