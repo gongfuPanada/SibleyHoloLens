@@ -74,6 +74,14 @@ An augmented reality application using the Microsoft HoloLens where a person can
 * Developing for HoloLens
   * [Development overview](https://developer.microsoft.com/en-us/windows/holographic/development_overview) - (STM)
     * [Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
+      * Chapter 1 - (STM)
+        * Just creating a default, empty, 3D project wherever you want
+      * Chapter 2 - (STM)
+        * Just repeating setup steps from above
+      * Chapter 3
+
+      * Chapter 4
+      * Chapter 5
   * [App model](https://developer.microsoft.com/en-us/windows/holographic/app_model) - (STM)
     * It's all just standard Universal Windows Platform apps.
     * Only one app runs at a time.
@@ -91,8 +99,9 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Performance recommendations](https://developer.microsoft.com/en-us/windows/holographic/performance_recommendations)
   * [Testing](https://developer.microsoft.com/en-us/windows/holographic/testing)
   * [Submitting an app to the Windows Store](https://developer.microsoft.com/en-us/windows/holographic/submitting_an_app_to_the_windows_store)
-  * [FAQ](https://developer.microsoft.com/en-us/windows/holographic/faq)
-  * [Release notes](https://developer.microsoft.com/en-us/windows/holographic/release_notes)
+  * [FAQ](https://developer.microsoft.com/en-us/windows/holographic/faq) - (STM)
+  * [Release notes](https://developer.microsoft.com/en-us/windows/holographic/release_notes) - (STM)
+    * Microsoft HoloLens Commercial Suite and Kiosk mode will be important.
   * [Known issues](https://developer.microsoft.com/en-us/windows/holographic/known_issues) - (STM)
     * Use a Bluetooth keyboard to enter WiFi passwords.
 * Building blocks of Holographic apps
