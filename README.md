@@ -8,7 +8,7 @@ An augmented reality application using the Microsoft HoloLens where a person can
 * [HoloLens Unity Development Overview](https://developer.microsoft.com/en-us/windows/holographic/unity_development_overview)
 * [Unity HoloLens forum](http://forum.unity3d.com/forums/hololens.102/)
 
-## STEPS
+## INSTALL DEVELOPMENT TOOLS
 
 * [Install Tools](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools):
   * [Install Visual Studio 2015](https://developer.microsoft.com/en-us/windows/downloads). Community Edition is acceptable.
@@ -16,7 +16,8 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * Install Unity HoloLens Technology Preview.
   * Install Microsoft HoloLens app out of Windows Store on development PC.
   * Check back regularly for updates to emulator and Unity.
-* Start a new, blank Unity project.
+
+## START A NEW UNITY PROJECT FOR HOLOLENS
 * Change the basic scene rendering settings:
   * Select the `Main Camera`.
   * Set its `position` to the origin `(0, 0, 0)`.
@@ -24,54 +25,58 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * Change `Background` to solid black.
   * Change `Clipping Planes - Near` to `0.85` meters (as per HoloLens design recommendations).
   * Save the Scene (`CTRL+S`, or `File > Save Scene`).
-* Change the project settings:
-  * Under `File > Build Settings...`:
-    * Select `Windows Store`.
-    * Change `SDK` to `Universal 10`.
-    * Change `UWP Build Type` to `D3D`.
-    * Check `Unity C# Projects`.
-    * Click `Player Settings...` button.
-      * Change `Company Name` and `Product Name` as necessary.
-      * Here is also where you will change the Icon.
-      * Under `Settings for Windows Store`:
-        * Under `Publishing Settings > Capabilities`, select
-          * `WebCam` (probably won't need it)
-          * `SpatialPerception`
-          * `Microphone`
-          * `PicturesLibrary` (probably won't need it)
-          * `VideosLibrary` (probably won't need it)
-          * `MusicLibrary` (probably won't need it)
-          * (Might also need `InternetClient`)
-          * (Might also need `Proximity`)
-          * (Might also need `Location`)
-        * Under `Other Settings > Rendering`:
-          * check `Virtual Reality Supported.
-          * select `Windows Holographic` for the device.
-   * Close `Build Settings`.
-  * Under `Edit > Projects Settings > Quality`:
-    * select the dropdown arrow under the row of checkboxes in the column for Windows Store.
-    * select `Fastest` for the default render quality.
-  * Save the Project (`File > Save Project`).
-  * Re-open `File > Build settings...`
-    * Click `Build`
-      * Create a directory named `App`.
-      * Note the full path of the `App` directory.
-      * Select that folder and click `OK`.
-    * Open the SLN file in that `App` directory in Visual Studio 2015.
-      * Right-click Package.appxmanifest and select `View code`.
-        * Change `Package > Depdencies > TargetDeviceFamily > @Name` to `Windows.Holographic`.
-        * Change `Package > Depdencies > TargetDeviceFamily > @MaxVersionTested` to `10.0.10586.0`.
-    * Pair HoloLens with dev PC.
-      * Plug HoloLens into dev PC with USB cable.
-      * On HoloLens, go to `Settings`:
-        * Go to `Network & internet > Advanced options` and note `IPv4 address`.
-        * Go back to `Settings > Update & security > For developers`.
-          * Enable `Developer mode`.
-          * Enabled `Device portal`.
-      * Change build configuration to `Debug, x86, Device`.
-      * Select `Debug > Start without debugging`.
-      * When prompted for PIN on dev PC, open `Settings > Updates & security > For developers` on HoloLens and click `Pair`.
-        * Enter the PIN number that HoloLens displays into textbox on dev PC.
+* Under `Edit > Projects settings > Quality`:
+  * select the dropdown arrow under the row of checkboxes in the column for Windows Store.
+  * select `Fastest` for the default render quality.
+* Under `File > Build settings...`:
+  * Select `Windows Store`.
+  * Change `SDK` to `Universal 10`.
+  * Change `UWP Build Type` to `D3D`.
+  * Check `Unity C# Projects`.
+  * Click `Player Settings...` button.
+    * Change `Company Name` and `Product Name` as necessary.
+    * Here is also where you will change the Icon.
+    * Under `Settings for Windows Store`:
+      * Under `Publishing Settings > Capabilities`, select
+        * `WebCam` (probably won't need it)
+        * `SpatialPerception`
+        * `Microphone`
+        * `PicturesLibrary` (probably won't need it)
+        * `VideosLibrary` (probably won't need it)
+        * `MusicLibrary` (probably won't need it)
+        * (Might also need `InternetClient`)
+        * (Might also need `Proximity`)
+        * (Might also need `Location`)
+      * Under `Other Settings > Rendering`:
+        * check `Virtual Reality Supported.
+        * select `Windows Holographic` for the device.
+ * Close `Build Settings`.
+* Save the Project (`File > Save Project`).
+* Open `File > Build settings...`
+  * Click `Build`
+    * Create a directory named `App`.
+    * Note the full path of the `App` directory.
+    * Select that folder and click `OK`.
+
+
+## DEPLOY UNITY APP TO HOLOLENS
+* Open the Unity-created SLN file in Visual Studio 2015.
+  * Right-click Package.appxmanifest and select `View code`.
+    * Change `Package > Dependencies > TargetDeviceFamily > @Name` to `Windows.Holographic`.
+    * Change `Package > Dependencies > TargetDeviceFamily > @MaxVersionTested` to `10.0.10586.0`.
+  * Pair HoloLens with dev PC.
+    * Plug HoloLens into dev PC with USB cable.
+    * On HoloLens, go to `Settings`:
+      * Go to `Network & Internet > Advanced options` and note `IPv4 address`.
+      * Go back to `Settings > Update & security > For developers`.
+        * Enable `Developer mode`.
+        * Enabled `Device portal`.
+    * Change build configuration to `Debug, x86, Device`.
+    * Select `Debug > Start without debugging`.
+    * When prompted for PIN on dev PC, open `Settings > Updates & security > For developers` on HoloLens and click `Pair`.
+      * Enter the PIN number that HoloLens displays into textbox on dev PC.
+  * After several seconds of deployment process, view the running app on the HoloLens.
+
 ## TODO
 
 ### READING (Mark your initials next to each entry when complete)
@@ -107,7 +112,7 @@ An augmented reality application using the Microsoft HoloLens where a person can
         * Execute a Unity build for Windows Store.
           * Open the Visual Studio Solution this step creates.
           * Change the project settings to favor Windows Holographic.
-            * 
+            *
       * Chapter 5
   * [App model](https://developer.microsoft.com/en-us/windows/holographic/app_model) - (STM)
     * It's all just standard Universal Windows Platform apps.
