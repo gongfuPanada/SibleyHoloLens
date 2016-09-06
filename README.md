@@ -72,13 +72,13 @@ An augmented reality application using the Microsoft HoloLens where a person can
         * Enable `Developer mode`.
         * Enabled `Device portal`.
     * Change build configuration to `Debug, x86` and select either:
-      * `Device`:
+      * `HoloLens Emulator`.
+      * `Device`.
       * `Remote Machine`:
         * Enter the IP Address of the HoloLens.
         * For `Authentication Mode` use `Universal (Unencrypted protocol)`
-
     * Select `Debug > Start without debugging`.
-      * The first time deploying to a HoloLens from a particular dev PC requires pairing the two devices together with a PIN.
+      * The first time deploying to a real HoloLens (not the Emulator) from a particular dev PC requires pairing the two devices together with a PIN.
         * When prompted for PIN on dev PC, open `Settings > Updates & security > For developers` on HoloLens and click `Pair`.
         * Enter the PIN number that HoloLens displays into textbox on dev PC.
   * After several seconds of deployment process, view the running app on the HoloLens.
@@ -121,6 +121,7 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/using_visual_studio) - (STM)
     * `Developer mode` on the HoloLens has to be enabled first, see setup instructions above.
     * Use the x86 build configuration. HoloLens runs a 32-bit Intel processor.
+    * Use the emulator for quick tests. Both the `Device` and `Remote Machine` deployments take a significant amount of time to deploy.
   * [Using the HoloLens emulator](https://developer.microsoft.com/en-us/windows/holographic/using_the_hololens_emulator)
   * [Using the Windows device portal](https://developer.microsoft.com/en-us/windows/holographic/using_the_windows_device_portal)
   * [Performance recommendations](https://developer.microsoft.com/en-us/windows/holographic/performance_recommendations)
