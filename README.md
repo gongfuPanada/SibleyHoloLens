@@ -29,6 +29,7 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * select the dropdown arrow under the row of checkboxes in the column for Windows Store.
   * select `Fastest` for the default render quality.
 * Under `File > Build settings...`:
+  *
   * Select `Windows Store`.
   * Change `SDK` to `Universal 10`.
   * Change `UWP Build Type` to `D3D`.
@@ -101,19 +102,6 @@ An augmented reality application using the Microsoft HoloLens where a person can
 * Developing for HoloLens
   * [Development overview](https://developer.microsoft.com/en-us/windows/holographic/development_overview) - (STM)
     * [Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
-      * Chapter 1 - (STM)
-        * Just creating a default, empty, 3D project wherever you want.
-      * Chapter 2 - (STM)
-        * Just repeating the Basic Scene Rendering Steps from above.
-      * Chapter 3
-        * Just making a cube.
-      * Chapter 4
-        * Repeating the Project Settings steps from above.
-        * Execute a Unity build for Windows Store.
-          * Open the Visual Studio Solution this step creates.
-          * Change the project settings to favor Windows Holographic.
-            *
-      * Chapter 5
   * [App model](https://developer.microsoft.com/en-us/windows/holographic/app_model) - (STM)
     * It's all just standard Universal Windows Platform apps.
     * Only one app runs at a time.
@@ -169,3 +157,18 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * D3D is the recommended build type over XAML because XAML apps sometimes fail to start. However, this also prevents use with the virtual keyboard.
     * Mixed Reality Capture is not supported.
     * Unity's "Play Mode" does not deploy to the HoloLens. Need to follow the normal, Visual Studio-based deployment process.
+* [Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
+  * [Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100) - (STM)
+    * Chapter 1 - Creating a default, empty, 3D project.
+    * Chapter 2 - Basic Scene Rendering settings.
+    * Chapter 3 - Making a cube.
+    * Chapter 4 - Project Settings.
+    * Chapter 5 - Deployment.
+  * [Holograms 101E - Introduction with Emulator](https://developer.microsoft.com/en-us/windows/holographic/holograms_101e)
+  * [Holograms 101 - Introduction with Device](https://developer.microsoft.com/en-us/windows/holographic/holograms_101)
+  * [Holograms 210 - Gaze](https://developer.microsoft.com/en-us/windows/holographic/holograms_210)
+  * [Holograms 211 - Gesture](https://developer.microsoft.com/en-us/windows/holographic/holograms_211)
+  * [Holograms 212 - Voice](https://developer.microsoft.com/en-us/windows/holographic/holograms_212)
+  * [Holograms 220 - Spatial sound](https://developer.microsoft.com/en-us/windows/holographic/holograms_220)
+  * [Holograms 230 - Spatial mapping](https://developer.microsoft.com/en-us/windows/holographic/holograms_230)
+  * [Holograms 240 - Sharing holograms](https://developer.microsoft.com/en-us/windows/holographic/holograms_240)
