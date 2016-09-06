@@ -66,16 +66,21 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * Change `Package > Dependencies > TargetDeviceFamily > @Name` to `Windows.Holographic`.
     * Change `Package > Dependencies > TargetDeviceFamily > @MaxVersionTested` to `10.0.10586.0`.
   * Pair HoloLens with dev PC.
-    * Plug HoloLens into dev PC with USB cable.
     * On HoloLens, go to `Settings`:
       * Go to `Network & Internet > Advanced options` and note `IPv4 address`.
       * Go back to `Settings > Update & security > For developers`.
         * Enable `Developer mode`.
         * Enabled `Device portal`.
-    * Change build configuration to `Debug, x86, Device`.
+    * Change build configuration to `Debug, x86` and select either:
+      * `Device`:
+      * `Remote Machine`:
+        * Enter the IP Address of the HoloLens.
+        * For `Authentication Mode` use `Universal (Unencrypted protocol)`
+
     * Select `Debug > Start without debugging`.
-    * When prompted for PIN on dev PC, open `Settings > Updates & security > For developers` on HoloLens and click `Pair`.
-      * Enter the PIN number that HoloLens displays into textbox on dev PC.
+      * The first time deploying to a HoloLens from a particular dev PC requires pairing the two devices together with a PIN.
+        * When prompted for PIN on dev PC, open `Settings > Updates & security > For developers` on HoloLens and click `Pair`.
+        * Enter the PIN number that HoloLens displays into textbox on dev PC.
   * After several seconds of deployment process, view the running app on the HoloLens.
 
 ## TODO
@@ -113,7 +118,9 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * 2D app views are a fixed resolution and aspect ratio. Resizing them just makes them bigger/"zoomed in".
     * Dealing with file saving and loading is possible, but sounds super annoying.
   * [Install the tools](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools) - (STM)
-  * [Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/using_visual_studio)
+  * [Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/using_visual_studio) - (STM)
+    * `Developer mode` on the HoloLens has to be enabled first, see setup instructions above.
+    * Use the x86 build configuration. HoloLens runs a 32-bit Intel processor.
   * [Using the HoloLens emulator](https://developer.microsoft.com/en-us/windows/holographic/using_the_hololens_emulator)
   * [Using the Windows device portal](https://developer.microsoft.com/en-us/windows/holographic/using_the_windows_device_portal)
   * [Performance recommendations](https://developer.microsoft.com/en-us/windows/holographic/performance_recommendations)
