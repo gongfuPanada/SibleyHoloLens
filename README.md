@@ -121,8 +121,16 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/using_visual_studio) - (STM)
     * `Developer mode` on the HoloLens has to be enabled first, see setup instructions above.
     * Use the x86 build configuration. HoloLens runs a 32-bit Intel processor.
-    * Use the emulator for quick tests. Both the `Device` and `Remote Machine` deployments take a significant amount of time to deploy.
-  * [Using the HoloLens emulator](https://developer.microsoft.com/en-us/windows/holographic/using_the_hololens_emulator)
+    * Use the emulator for quick tests. Both the `Device` and `Remote Machine` deployments take a significant amount of time to deploy, and the HoloLens does not have a large battery.
+    * The Graphics Debugger and Profiler are their own types of application starters, you don't need to start the app first.
+    * Don't close the Emulator or power off the HoloLens before turning off the Graphics Debugger or Profiler.
+  * [Using the HoloLens emulator](https://developer.microsoft.com/en-us/windows/holographic/using_the_hololens_emulator) - (STM)
+    * WASD keys or Xbox controller left-stick to move.
+    * Drag mouse, arrow keys, or Xbox controller right-stick to look around.
+    * Right click, enter key, or A button on Xbox controller to air-tap.
+    * Win-key, F2, or B button on Xbox controller for bloom.
+    * Hold the Alt + Right click + drag mouse up and down, or right trigger + A button + right stick up and down for hand movement scrolling.
+    * There are a number of different "rooms" of test data to use with the emulator.
   * [Using the Windows device portal](https://developer.microsoft.com/en-us/windows/holographic/using_the_windows_device_portal)
   * [Performance recommendations](https://developer.microsoft.com/en-us/windows/holographic/performance_recommendations)
   * [Testing](https://developer.microsoft.com/en-us/windows/holographic/testing)
