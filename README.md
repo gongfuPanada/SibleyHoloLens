@@ -14,13 +14,29 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Install Visual Studio 2015](https://developer.microsoft.com/en-us/windows/downloads). Community Edition is acceptable.
   * Install HoloLens emulator.
   * Install Unity HoloLens Technology Preview.
+  * Install Microsoft HoloLens app out of Windows Store on development PC.
   * Check back regularly for updates to emulator and Unity.
+* Pair HoloLens with dev PC.
+  * Plug HoloLens into dev PC with USB cable.
+  * On HoloLens, go to `Settings`:
+    * Go to `Network & internet > Advanced options` and note `IPv4 address`.
+    * Go back to `Settings > Update & security > For developers`.
+      * Enable `Developer mode`.
+      * Enabled `Device portal`.
 * Start a new, blank Unity project.
+* Change the basic scene rendering settings:
+  * Select the `Main Camera`.
+  * Set its `position` to the origin `(0, 0, 0)`.
+  * Change `Clear Flags` to `Solid Color`.
+  * Change `Background` to solid black.
+  * Change `Clipping Planes - Near` to `0.85` meters (as per HoloLens design recommendations).
+  * Save the Scene (`CTRL+S`, or `File > Save Scene`).
 * Change the project settings:
   * Under `File > Build Settings...`:
     * Select `Windows Store`.
     * Change `SDK` to `Universal 10`.
     * Change `UWP Build Type` to `D3D`.
+    * Check `Unity C# Projects`.
     * Click `Player Settings...` button.
       * Change `Company Name` and `Product Name` as necessary.
       * Here is also where you will change the Icon.
@@ -38,17 +54,18 @@ An augmented reality application using the Microsoft HoloLens where a person can
         * Under `Other Settings > Rendering`:
           * check `Virtual Reality Supported.
           * select `Windows Holographic` for the device.
+    * Click `Build`
+     * Create a directory named `App`.
+     * Note the full path of the `App` directory.
+     * Select that folder and click `OK`.
+    * Open the SLN file in that `App` directory in Visual Studio 2015.
+     * Right-click Package.appxmanifest and select `View code`.
+      * Change `Package > Depdencies > TargetDeviceFamily > @Name` to `Windows.Holographic`.
+      * Change `Package > Depdencies > TargetDeviceFamily > @MaxVersionTested` to `10.0.10586.0`.
   * Under `Edit > Projects Settings > Quality`:
     * select the dropdown arrow under the row of checkboxes in the column for Windows Store.
     * select `Fastest` for the default render quality.
   * Save the Project (`File > Save Project`).
-* Change the basic scene rendering settings:
-  * Select the `Main Camera`.
-  * Set its `position` to the origin `(0, 0, 0)`.
-  * Change `Clear Flags` to `Solid Color`.
-  * Change `Background` to solid black.
-  * Change `Clipping Planes - Near` to `0.85` meters (as per HoloLens design recommendations).
-  * Save the Scene (`CTRL+S`, or `File > Save Scene`).
 
 ## TODO
 
@@ -75,12 +92,17 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Development overview](https://developer.microsoft.com/en-us/windows/holographic/development_overview) - (STM)
     * [Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
       * Chapter 1 - (STM)
-        * Just creating a default, empty, 3D project wherever you want
+        * Just creating a default, empty, 3D project wherever you want.
       * Chapter 2 - (STM)
-        * Just repeating setup steps from above
+        * Just repeating the Basic Scene Rendering Steps from above.
       * Chapter 3
-
+        * Just making a cube.
       * Chapter 4
+        * Repeating the Project Settings steps from above.
+        * Execute a Unity build for Windows Store.
+          * Open the Visual Studio Solution this step creates.
+          * Change the project settings to favor Windows Holographic.
+            * 
       * Chapter 5
   * [App model](https://developer.microsoft.com/en-us/windows/holographic/app_model) - (STM)
     * It's all just standard Universal Windows Platform apps.
