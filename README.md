@@ -16,13 +16,6 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * Install Unity HoloLens Technology Preview.
   * Install Microsoft HoloLens app out of Windows Store on development PC.
   * Check back regularly for updates to emulator and Unity.
-* Pair HoloLens with dev PC.
-  * Plug HoloLens into dev PC with USB cable.
-  * On HoloLens, go to `Settings`:
-    * Go to `Network & internet > Advanced options` and note `IPv4 address`.
-    * Go back to `Settings > Update & security > For developers`.
-      * Enable `Developer mode`.
-      * Enabled `Device portal`.
 * Start a new, blank Unity project.
 * Change the basic scene rendering settings:
   * Select the `Main Camera`.
@@ -54,19 +47,31 @@ An augmented reality application using the Microsoft HoloLens where a person can
         * Under `Other Settings > Rendering`:
           * check `Virtual Reality Supported.
           * select `Windows Holographic` for the device.
-    * Click `Build`
-     * Create a directory named `App`.
-     * Note the full path of the `App` directory.
-     * Select that folder and click `OK`.
-    * Open the SLN file in that `App` directory in Visual Studio 2015.
-     * Right-click Package.appxmanifest and select `View code`.
-      * Change `Package > Depdencies > TargetDeviceFamily > @Name` to `Windows.Holographic`.
-      * Change `Package > Depdencies > TargetDeviceFamily > @MaxVersionTested` to `10.0.10586.0`.
+   * Close `Build Settings`.
   * Under `Edit > Projects Settings > Quality`:
     * select the dropdown arrow under the row of checkboxes in the column for Windows Store.
     * select `Fastest` for the default render quality.
   * Save the Project (`File > Save Project`).
-
+  * Re-open `File > Build settings...`
+    * Click `Build`
+      * Create a directory named `App`.
+      * Note the full path of the `App` directory.
+      * Select that folder and click `OK`.
+    * Open the SLN file in that `App` directory in Visual Studio 2015.
+      * Right-click Package.appxmanifest and select `View code`.
+        * Change `Package > Depdencies > TargetDeviceFamily > @Name` to `Windows.Holographic`.
+        * Change `Package > Depdencies > TargetDeviceFamily > @MaxVersionTested` to `10.0.10586.0`.
+    * Pair HoloLens with dev PC.
+      * Plug HoloLens into dev PC with USB cable.
+      * On HoloLens, go to `Settings`:
+        * Go to `Network & internet > Advanced options` and note `IPv4 address`.
+        * Go back to `Settings > Update & security > For developers`.
+          * Enable `Developer mode`.
+          * Enabled `Device portal`.
+      * Change build configuration to `Debug, x86, Device`.
+      * Select `Debug > Start without debugging`.
+      * When prompted for PIN on dev PC, open `Settings > Updates & security > For developers` on HoloLens and click `Pair`.
+        * Enter the PIN number that HoloLens displays into textbox on dev PC.
 ## TODO
 
 ### READING (Mark your initials next to each entry when complete)
