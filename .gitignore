@@ -1,1 +1,7 @@
 Temp/
+bin/
+obj/
+App/SibleyHoloLens/obj/
+App/SibleyHoloLens/bin/
+App/Players/UAP/
+Library/ShaderCache/
