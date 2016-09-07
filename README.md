@@ -81,6 +81,8 @@ An augmented reality application using the Microsoft HoloLens where a person can
       * The first time deploying to a real HoloLens (not the Emulator) from a particular dev PC requires pairing the two devices together with a PIN.
         * When prompted for PIN on dev PC, open `Settings > Updates & security > For developers` on HoloLens and click `Pair`.
         * Enter the PIN number that HoloLens displays into textbox on dev PC.
+        * You'll be prompted to create a user account for the Device Portal.
+        * You can now access the Device Portal at https://<HOLOLENS_IP_ADDRESS>
   * After several seconds of deployment process, view the running app on the HoloLens.
 
 ## TODO
@@ -131,7 +133,9 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * Win-key, F2, or B button on Xbox controller for bloom.
     * Hold the Alt + Right click + drag mouse up and down, or right trigger + A button + right stick up and down for hand movement scrolling.
     * There are a number of different "rooms" of test data to use with the emulator.
-  * [Using the Windows device portal](https://developer.microsoft.com/en-us/windows/holographic/using_the_windows_device_portal)
+  * [Using the Windows device portal](https://developer.microsoft.com/en-us/windows/holographic/using_the_windows_device_portal) - (STM)
+    * A lot of the management of the HoloLens is a lot easier over the Device Portal than in the device itself.
+    * Can also use it to download an OBJ file of the room data.
   * [Performance recommendations](https://developer.microsoft.com/en-us/windows/holographic/performance_recommendations)
   * [Testing](https://developer.microsoft.com/en-us/windows/holographic/testing)
   * [Submitting an app to the Windows Store](https://developer.microsoft.com/en-us/windows/holographic/submitting_an_app_to_the_windows_store)
