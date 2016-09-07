@@ -142,7 +142,15 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * No more than 1 frame of latency.
     * Keep memory usage under 900MB.
     * Read the article for the rest.
-  * [Testing](https://developer.microsoft.com/en-us/windows/holographic/testing)
+  * [Testing](https://developer.microsoft.com/en-us/windows/holographic/testing) - (STM)
+    * In many rooms, with different features, crossing room boundaries, up and down stairs.
+    * In a variety of lighting conditions. Though note, HoloLens is not meant for outdoor use.
+    * In a variety of noise conditions.
+    * In different motion conditions. Moving versus standing still. Crouched. Sitting.
+    * From a variety of angles, and with real world objects in the way.
+    * Use spatial audio cues.
+    * At a variety of distances.
+    * Test the App Bar.
   * [Submitting an app to the Windows Store](https://developer.microsoft.com/en-us/windows/holographic/submitting_an_app_to_the_windows_store)
   * [FAQ](https://developer.microsoft.com/en-us/windows/holographic/faq) - (STM)
   * [Release notes](https://developer.microsoft.com/en-us/windows/holographic/release_notes) - (STM)
