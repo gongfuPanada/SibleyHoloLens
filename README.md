@@ -151,7 +151,8 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * Use spatial audio cues.
     * At a variety of distances.
     * Test the App Bar.
-  * [Submitting an app to the Windows Store](https://developer.microsoft.com/en-us/windows/holographic/submitting_an_app_to_the_windows_store)
+  * [Submitting an app to the Windows Store](https://developer.microsoft.com/en-us/windows/holographic/submitting_an_app_to_the_windows_store) - (STM)
+    * Read at least the section on `Packaging an app for HoloLens`, as it includes specifications for icons that will be necessary for any app, not just those submitted to the Windows Store.
   * [FAQ](https://developer.microsoft.com/en-us/windows/holographic/faq) - (STM)
   * [Release notes](https://developer.microsoft.com/en-us/windows/holographic/release_notes) - (STM)
     * Microsoft HoloLens Commercial Suite and Kiosk mode will be important.
