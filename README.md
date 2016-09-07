@@ -136,7 +136,12 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Using the Windows device portal](https://developer.microsoft.com/en-us/windows/holographic/using_the_windows_device_portal) - (STM)
     * A lot of the management of the HoloLens is a lot easier over the Device Portal than in the device itself.
     * Can also use it to download an OBJ file of the room data.
-  * [Performance recommendations](https://developer.microsoft.com/en-us/windows/holographic/performance_recommendations)
+  * [Performance recommendations](https://developer.microsoft.com/en-us/windows/holographic/performance_recommendations) - (STM)
+    * In general, try not to use any sort of deferred shading.
+    * Need to maintain 60FPS.
+    * No more than 1 frame of latency.
+    * Keep memory usage under 900MB.
+    * Read the article for the rest.
   * [Testing](https://developer.microsoft.com/en-us/windows/holographic/testing)
   * [Submitting an app to the Windows Store](https://developer.microsoft.com/en-us/windows/holographic/submitting_an_app_to_the_windows_store)
   * [FAQ](https://developer.microsoft.com/en-us/windows/holographic/faq) - (STM)
