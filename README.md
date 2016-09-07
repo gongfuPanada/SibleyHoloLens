@@ -151,6 +151,7 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * Use spatial audio cues.
     * At a variety of distances.
     * Test the App Bar.
+    * Test to make sure the app works in a reasonable manner when the position is unknown.
   * [Submitting an app to the Windows Store](https://developer.microsoft.com/en-us/windows/holographic/submitting_an_app_to_the_windows_store) - (STM)
     * Read at least the section on `Packaging an app for HoloLens`, as it includes specifications for icons that will be necessary for any app, not just those submitted to the Windows Store.
   * [FAQ](https://developer.microsoft.com/en-us/windows/holographic/faq) - (STM)
@@ -159,7 +160,31 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Known issues](https://developer.microsoft.com/en-us/windows/holographic/known_issues) - (STM)
     * Use a Bluetooth keyboard to enter WiFi passwords.
 * Building blocks of Holographic apps
-  * [World coordinates](https://developer.microsoft.com/en-us/windows/holographic/coordinate_systems)
+  * [World coordinates](https://developer.microsoft.com/en-us/windows/holographic/coordinate_systems) - (STM)
+    * Values are in meters.
+    * Coordinate system is right-handed (because of Direct3D).
+      * +x is right
+      * +y is up
+      * +z is backwards
+        * This is the opposite of OpenGL, which is left-handed, where +z is forwards.
+    * The origin is anchored to a "stationary frame of reference" that is fixed for the room. They move as the system updates to figure out the true structure of the room.
+    * Spatial Anchors can be placed that compensate for the shifting of the Spatial Frame of Reference and maintain their relative position to each other.
+    * Objects in Spatial Frame of Reference stay in rigid relationship to each other, but may appear to drift apart.
+    * Objects on Spatial Anchors may appear unmoved, but may have to update their relationship between each other.
+    * Keep objects within 3 meters of a Spatial Anchor to avoid compounding error effects.
+    * Spatial Anchors can be persisted to a special store just for them.
+    * Objects can also be persisted, with their Spatial Anchor recorded, so their location can be recalled even after application reload.
+    * Spatial Anchors and environment maps can be shared between HoloLens devices so separate uses can see objects appear in the same location.
+    * Objects can be attached to the user in an "attached frame of reference".
+      * This is also the fallback mode when position is unknown.
+      * Test to make sure the app works in a reasonable manner when the position is unknown.
+    * Avoid head-locked content. Even cursors should be placed in World Coordinates, landing on the objects at which they are pointing.
+    * Tracking errors:
+      * Covering the sensors or using the device in low light can cause a loss in position tracking.
+        * Make suggestions to the user to try to get tracking back.
+      * Lots of moving objects can confuse the sensor, causing holograms to appear to jump or drift.
+      * Significant changes to the environment over time can cause holograms to drift.
+      * Very similar environments can be recognized as the same environment, which can cause holograms in one to show up in the other.
   * [Gaze input](https://developer.microsoft.com/en-us/windows/holographic/gaze)
   * [Gesture input](https://developer.microsoft.com/en-us/windows/holographic/gestures)
   * [Voice input](https://developer.microsoft.com/en-us/windows/holographic/voice_input)
@@ -206,3 +231,5 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Holograms 220 - Spatial sound](https://developer.microsoft.com/en-us/windows/holographic/holograms_220)
   * [Holograms 230 - Spatial mapping](https://developer.microsoft.com/en-us/windows/holographic/holograms_230)
   * [Holograms 240 - Sharing holograms](https://developer.microsoft.com/en-us/windows/holographic/holograms_240)
+* Other
+  * [Spatial Anchors](https://developer.microsoft.com/en-us/windows/holographic/spatial_anchors)
