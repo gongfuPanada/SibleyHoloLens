@@ -16,6 +16,7 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * Install Unity HoloLens Technology Preview.
   * Install Microsoft HoloLens app out of Windows Store on development PC.
   * Check back regularly for updates to emulator and Unity.
+  * (Optional) Install [Visual Studio 2015 Tools for Unity](https://visualstudiogallery.msdn.microsoft.com/8d26236e-4a64-4d64-8486-7df95156aba9)
 
 ## START A NEW UNITY PROJECT FOR HOLOLENS
 * Change the basic scene rendering settings:
@@ -185,21 +186,78 @@ An augmented reality application using the Microsoft HoloLens where a person can
       * Lots of moving objects can confuse the sensor, causing holograms to appear to jump or drift.
       * Significant changes to the environment over time can cause holograms to drift.
       * Very similar environments can be recognized as the same environment, which can cause holograms in one to show up in the other.
-  * [Gaze input](https://developer.microsoft.com/en-us/windows/holographic/gaze)
-  * [Gesture input](https://developer.microsoft.com/en-us/windows/holographic/gestures)
-  * [Voice input](https://developer.microsoft.com/en-us/windows/holographic/voice_input)
-  * [Spatial sound](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound)
+  * [Gaze input](https://developer.microsoft.com/en-us/windows/holographic/gaze) - (STM)
+    * Don't track the hand directly. Track the gaze, then when the hand is activated, use it for relative adjustments.
+    * Move the cursor to where the gaze ray intersects an object.
+    * Provide contextual actions at the gaze point through gestures or voice.
+  * [Gesture input](https://developer.microsoft.com/en-us/windows/holographic/gestures) - (STM)
+    * System can track both hands separately.
+    * System ignores hands that are not in Ready or Pressed state.
+    * Bloom is not a positionally tracked gesture.
+    * Gesture recognition is wider than FOV, but only by about 50% per side.
+    * The Clicker doesn't need to be in the gesture volume.
+  * [Voice input](https://developer.microsoft.com/en-us/windows/holographic/voice_input) - (STM)
+    * Provide labels on objects that have voice interaction.
+    * A few commands:
+      * Select
+      * Face me
+      * Bigger | Enhance
+      * Smaller
+      * Hey Cortana...
+      * Remove
+      * Place
+  * [Spatial sound](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound) - (STM)
+    * "Window's spatial sound engine only supports 48k samplerate for playback. Most middleware programs, like Unity, will automatically convert sound files into the supported format, but when using Windows Audio APIs directly please match the format of the content to the format supported by the effect."
   * [Spatial mapping](https://developer.microsoft.com/en-us/windows/holographic/spatial_mapping)
+    * Holograms that interact with the real world surface seem more real.
+    * Occlusion makes them feel solid.
+      * Consider rendering occluded objects at reduced brightness if the user needs to find them.
+    * Draw a shadow on the ground surface under holograms that are being placed.
+    * Raw spatial data is pretty rough.
+    * (continue)
 * Building 2D apps
   * [Building 2D apps](https://developer.microsoft.com/en-us/windows/holographic/building_2d_apps)
   * [Current limitations for apps using APIs from the shell](https://developer.microsoft.com/en-us/windows/holographic/current_limitations_for_apps_using_apis_from_the_shell)
 * Building holographic apps with Unity
-  * [Unity development overview](https://developer.microsoft.com/en-us/windows/holographic/unity_development_overview)
-  * [Recommended settings for Unity](https://developer.microsoft.com/en-us/windows/holographic/recommended_settings_for_unity)
+  * [Unity development overview](https://developer.microsoft.com/en-us/windows/holographic/unity_development_overview) - (STM)
+    * Just covers basic setup again.
+  * [Recommended settings for Unity](https://developer.microsoft.com/en-us/windows/holographic/recommended_settings_for_unity) - (STM)
+    * Get a Pro license to be able to show a custom splash screen.
+    * Unity stops rendering on a tracking loss. A splash screen can optionally be shown.
+      * This behavior can be disabled at `Edit > Project Settings... > Player` page, click on the `Windows Store` tab and find the `Windows Holographic > On Tracking Loss Pause and Show Image` checkbox.
+      * If you do this, only show body-locked holograms when tracking is lost.
+    * Don't really need the MusicLibrary permission for this app.
+    * The Picture- and Video-related permissions are only important for taking screenshots.
   * [Performance recommendations for Unity](https://developer.microsoft.com/en-us/windows/holographic/performance_recommendations_for_unity)
-  * [Exporting and building a Unity Visual Studio solution](https://developer.microsoft.com/en-us/windows/holographic/exporting_and_building_a_unity_visual_studio_solution)
-  * [Best practices working with Unity and Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/best_practices_for_working_with_unity_and_visual_studio)
-* Designing hologram
+  * [Exporting and building a Unity Visual Studio solution](https://developer.microsoft.com/en-us/windows/holographic/exporting_and_building_a_unity_visual_studio_solution) - (STM)
+    * Need to re-export after:
+      * Adding or removing assets in the Project tab.
+      * Changing any value in the Inspector tab.
+      * Adding or removing objects from the Hierarchy tab.
+      * Changing any Unity project settings.
+    * Build configs:
+      * Debug is debug.
+      * Master is the new Release.
+      * Release is an intermediate debug for performance (profiling).
+  * [Best practices working with Unity and Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/best_practices_for_working_with_unity_and_visual_studio) - (STM)
+    * Switch to text-based assets to make diffing easier.
+    * Regenerate UWP Visual Studio solutions after Windows SDK or Unity upgrade.
+    * Public class variables are editable in the Unity property grids.
+  * Additional links
+    * [Camera](https://developer.microsoft.com/en-us/windows/holographic/camera_in_unity)
+    * [Gaze](https://developer.microsoft.com/en-us/windows/holographic/gaze_in_unity)
+    * [Gestures](https://developer.microsoft.com/en-us/windows/holographic/gestures_in_unity)
+    * [Voice Input](https://developer.microsoft.com/en-us/windows/holographic/voice_input_in_unity)
+    * [World Anchors](https://developer.microsoft.com/en-us/windows/holographic/world_anchor_in_unity)
+    * [Persistence](https://developer.microsoft.com/en-us/windows/holographic/persistence_in_unity)
+    * [Spatial Sound](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound_in_unity)
+    * [Spatial Mapping](https://developer.microsoft.com/en-us/windows/holographic/spatial_mapping_in_unity)
+    * [Shared Holograms](https://developer.microsoft.com/en-us/windows/holographic/shared_holographic_experiences_in_unity)
+    * [Locatable Camera](https://developer.microsoft.com/en-us/windows/holographic/locatable_camera_in_unity)
+    * [Focus Point](https://developer.microsoft.com/en-us/windows/holographic/focus_point_in_unity)
+    * [Tracking Loss](https://developer.microsoft.com/en-us/windows/holographic/tracking_loss_in_unity)
+    * [Keyboard Input](https://developer.microsoft.com/en-us/windows/holographic/keyboard_input_in_unity)
+* Designing holograms
   * [Designing for mixed reality](https://developer.microsoft.com/en-us/windows/holographic/designing_for_mixed_reality)
   * [Types of holographic apps](https://developer.microsoft.com/en-us/windows/holographic/types_of_holographic_apps)
   * [Cursor](https://developer.microsoft.com/en-us/windows/holographic/cursors)
