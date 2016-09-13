@@ -189,10 +189,31 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * Don't track the hand directly. Track the gaze, then when the hand is activated, use it for relative adjustments.
     * Move the cursor to where the gaze ray intersects an object.
     * Provide contextual actions at the gaze point through gestures or voice.
-  * [Gesture input](https://developer.microsoft.com/en-us/windows/holographic/gestures)
-  * [Voice input](https://developer.microsoft.com/en-us/windows/holographic/voice_input)
-  * [Spatial sound](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound)
+  * [Gesture input](https://developer.microsoft.com/en-us/windows/holographic/gestures) - (STM)
+    * System can track both hands separately.
+    * System ignores hands that are not in Ready or Pressed state.
+    * Bloom is not a positionally tracked gesture.
+    * Gesture recognition is wider than FOV, but only by about 50% per side.
+    * The Clicker doesn't need to be in the gesture volume.
+  * [Voice input](https://developer.microsoft.com/en-us/windows/holographic/voice_input) - (STM)
+    * Provide labels on objects that have voice interaction.
+    * A few commands:
+      * Select
+      * Face me
+      * Bigger | Enhance
+      * Smaller
+      * Hey Cortana...
+      * Remove
+      * Place
+  * [Spatial sound](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound) - (STM)
+    * "Window's spatial sound engine only supports 48k samplerate for playback. Most middleware programs, like Unity, will automatically convert sound files into the supported format, but when using Windows Audio APIs directly please match the format of the content to the format supported by the effect."
   * [Spatial mapping](https://developer.microsoft.com/en-us/windows/holographic/spatial_mapping)
+    * Holograms that interact with the real world surface seem more real.
+    * Occlusion makes them feel solid.
+      * Consider rendering occluded objects at reduced brightness if the user needs to find them.
+    * Draw a shadow on the ground surface under holograms that are being placed.
+    * Raw spatial data is pretty rough.
+    * (continue)
 * Building 2D apps
   * [Building 2D apps](https://developer.microsoft.com/en-us/windows/holographic/building_2d_apps)
   * [Current limitations for apps using APIs from the shell](https://developer.microsoft.com/en-us/windows/holographic/current_limitations_for_apps_using_apis_from_the_shell)
