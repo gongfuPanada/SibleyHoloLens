@@ -16,6 +16,7 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * Install Unity HoloLens Technology Preview.
   * Install Microsoft HoloLens app out of Windows Store on development PC.
   * Check back regularly for updates to emulator and Unity.
+  * (Optional) Install [Visual Studio 2015 Tools for Unity](https://visualstudiogallery.msdn.microsoft.com/8d26236e-4a64-4d64-8486-7df95156aba9)
 
 ## START A NEW UNITY PROJECT FOR HOLOLENS
 * Change the basic scene rendering settings:
@@ -218,11 +219,30 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Building 2D apps](https://developer.microsoft.com/en-us/windows/holographic/building_2d_apps)
   * [Current limitations for apps using APIs from the shell](https://developer.microsoft.com/en-us/windows/holographic/current_limitations_for_apps_using_apis_from_the_shell)
 * Building holographic apps with Unity
-  * [Unity development overview](https://developer.microsoft.com/en-us/windows/holographic/unity_development_overview)
-  * [Recommended settings for Unity](https://developer.microsoft.com/en-us/windows/holographic/recommended_settings_for_unity)
+  * [Unity development overview](https://developer.microsoft.com/en-us/windows/holographic/unity_development_overview) - (STM)
+    * Just covers basic setup again.
+  * [Recommended settings for Unity](https://developer.microsoft.com/en-us/windows/holographic/recommended_settings_for_unity) - (STM)
+    * Get a Pro license to be able to show a custom splash screen.
+    * Unity stops rendering on a tracking loss. A splash screen can optionally be shown.
+      * This behavior can be disabled at `Edit > Project Settings... > Player` page, click on the `Windows Store` tab and find the `Windows Holographic > On Tracking Loss Pause and Show Image` checkbox.
+      * If you do this, only show body-locked holograms when tracking is lost.
+    * Don't really need the MusicLibrary permission for this app.
+    * The Picture- and Video-related permissions are only important for taking screenshots.
   * [Performance recommendations for Unity](https://developer.microsoft.com/en-us/windows/holographic/performance_recommendations_for_unity)
-  * [Exporting and building a Unity Visual Studio solution](https://developer.microsoft.com/en-us/windows/holographic/exporting_and_building_a_unity_visual_studio_solution)
-  * [Best practices working with Unity and Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/best_practices_for_working_with_unity_and_visual_studio)
+  * [Exporting and building a Unity Visual Studio solution](https://developer.microsoft.com/en-us/windows/holographic/exporting_and_building_a_unity_visual_studio_solution) - (STM)
+    * Need to re-export after:
+      * Adding or removing assets in the Project tab.
+      * Changing any value in the Inspector tab.
+      * Adding or removing objects from the Hierarchy tab.
+      * Changing any Unity project settings.
+    * Build configs:
+      * Debug is debug.
+      * Master is the new Release.
+      * Release is an intermediate debug for performance (profiling).
+  * [Best practices working with Unity and Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/best_practices_for_working_with_unity_and_visual_studio) - (STM)
+    * Switch to text-based assets to make diffing easier.
+    * Regenerate UWP Visual Studio solutions after Windows SDK or Unity upgrade.
+    * Public class variables are editable in the Unity property grids.
   * Additional links
     * [Camera](https://developer.microsoft.com/en-us/windows/holographic/camera_in_unity)
     * [Gaze](https://developer.microsoft.com/en-us/windows/holographic/gaze_in_unity)
