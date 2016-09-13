@@ -185,7 +185,10 @@ An augmented reality application using the Microsoft HoloLens where a person can
       * Lots of moving objects can confuse the sensor, causing holograms to appear to jump or drift.
       * Significant changes to the environment over time can cause holograms to drift.
       * Very similar environments can be recognized as the same environment, which can cause holograms in one to show up in the other.
-  * [Gaze input](https://developer.microsoft.com/en-us/windows/holographic/gaze)
+  * [Gaze input](https://developer.microsoft.com/en-us/windows/holographic/gaze) - (STM)
+    * Don't track the hand directly. Track the gaze, then when the hand is activated, use it for relative adjustments.
+    * Move the cursor to where the gaze ray intersects an object.
+    * Provide contextual actions at the gaze point through gestures or voice.
   * [Gesture input](https://developer.microsoft.com/en-us/windows/holographic/gestures)
   * [Voice input](https://developer.microsoft.com/en-us/windows/holographic/voice_input)
   * [Spatial sound](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound)
