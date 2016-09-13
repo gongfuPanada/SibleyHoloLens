@@ -223,7 +223,21 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Performance recommendations for Unity](https://developer.microsoft.com/en-us/windows/holographic/performance_recommendations_for_unity)
   * [Exporting and building a Unity Visual Studio solution](https://developer.microsoft.com/en-us/windows/holographic/exporting_and_building_a_unity_visual_studio_solution)
   * [Best practices working with Unity and Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/best_practices_for_working_with_unity_and_visual_studio)
-* Designing hologram
+  * Additional links
+    * [Camera](https://developer.microsoft.com/en-us/windows/holographic/camera_in_unity)
+    * [Gaze](https://developer.microsoft.com/en-us/windows/holographic/gaze_in_unity)
+    * [Gestures](https://developer.microsoft.com/en-us/windows/holographic/gestures_in_unity)
+    * [Voice Input](https://developer.microsoft.com/en-us/windows/holographic/voice_input_in_unity)
+    * [World Anchors](https://developer.microsoft.com/en-us/windows/holographic/world_anchor_in_unity)
+    * [Persistence](https://developer.microsoft.com/en-us/windows/holographic/persistence_in_unity)
+    * [Spatial Sound](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound_in_unity)
+    * [Spatial Mapping](https://developer.microsoft.com/en-us/windows/holographic/spatial_mapping_in_unity)
+    * [Shared Holograms](https://developer.microsoft.com/en-us/windows/holographic/shared_holographic_experiences_in_unity)
+    * [Locatable Camera](https://developer.microsoft.com/en-us/windows/holographic/locatable_camera_in_unity)
+    * [Focus Point](https://developer.microsoft.com/en-us/windows/holographic/focus_point_in_unity)
+    * [Tracking Loss](https://developer.microsoft.com/en-us/windows/holographic/tracking_loss_in_unity)
+    * [Keyboard Input](https://developer.microsoft.com/en-us/windows/holographic/keyboard_input_in_unity)
+* Designing holograms
   * [Designing for mixed reality](https://developer.microsoft.com/en-us/windows/holographic/designing_for_mixed_reality)
   * [Types of holographic apps](https://developer.microsoft.com/en-us/windows/holographic/types_of_holographic_apps)
   * [Cursor](https://developer.microsoft.com/en-us/windows/holographic/cursors)
