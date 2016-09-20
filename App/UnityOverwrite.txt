@@ -5,37 +5,17 @@
 # Write a line equal to 'overwrite-all' (without quotes) to overwrite everything (preserved accross builds)
 # Write a line equal to 'keep-all' (without quotes) to keep files regardless their modification (preserved accross builds)
 # Default behavior is to never overwrite files
-SibleyHoloLens.sln: modified
-SibleyHoloLens\App.cs: 923071ADC62927F25760AEE69FE859D3
-SibleyHoloLens\Package.appxmanifest: modified
-SibleyHoloLens\project.json: 1D02BC64BAC0D041019673A1C4C51737
-SibleyHoloLens\SibleyHoloLens.csproj: 60D681A55096BB8D74B9CE656A19326E
-SibleyHoloLens\SibleyHoloLens.csproj.user: modified
-SibleyHoloLens\Assets\SplashScreen.scale-200.png: 60618416282ED104FD1473935716045D
-SibleyHoloLens\Assets\Square150x150Logo.scale-200.png: E02834B4A5DFB97FF8E212C1CACBB084
-SibleyHoloLens\Assets\Square44x44Logo.scale-200.png: 6C6EF27184ABE9D870A9D564953775DE
-SibleyHoloLens\Assets\Square44x44Logo.targetsize-24_altform-unplated.png: 156637F7B5363E983E7A46D8E533A23D
-SibleyHoloLens\Assets\StoreLogo.png: 90BD194CA4A7CFFF3E8B8222229857FB
-SibleyHoloLens\Assets\Wide310x150Logo.scale-200.png: C96846A80DF667F87355569CD816192D
-SibleyHoloLens\bin\x86\Debug\AppX\Assets\SplashScreen.scale-200.png: 60618416282ED104FD1473935716045D
-SibleyHoloLens\bin\x86\Debug\AppX\Assets\Square150x150Logo.scale-200.png: E02834B4A5DFB97FF8E212C1CACBB084
-SibleyHoloLens\bin\x86\Debug\AppX\Assets\Square44x44Logo.scale-200.png: 6C6EF27184ABE9D870A9D564953775DE
-SibleyHoloLens\bin\x86\Debug\AppX\Assets\Square44x44Logo.targetsize-24_altform-unplated.png: 156637F7B5363E983E7A46D8E533A23D
-SibleyHoloLens\bin\x86\Debug\AppX\Assets\StoreLogo.png: 90BD194CA4A7CFFF3E8B8222229857FB
-SibleyHoloLens\bin\x86\Debug\AppX\Assets\Wide310x150Logo.scale-200.png: C96846A80DF667F87355569CD816192D
-SibleyHoloLens\bin\x86\Debug\AppX\Properties\Default.rd.xml: 72EB282657164E79A1C42F6240984826
-SibleyHoloLens\bin\x86\Master\ilc\Assets\SplashScreen.scale-200.png: 60618416282ED104FD1473935716045D
-SibleyHoloLens\bin\x86\Master\ilc\Assets\Square150x150Logo.scale-200.png: E02834B4A5DFB97FF8E212C1CACBB084
-SibleyHoloLens\bin\x86\Master\ilc\Assets\Square44x44Logo.scale-200.png: 6C6EF27184ABE9D870A9D564953775DE
-SibleyHoloLens\bin\x86\Master\ilc\Assets\Square44x44Logo.targetsize-24_altform-unplated.png: 156637F7B5363E983E7A46D8E533A23D
-SibleyHoloLens\bin\x86\Master\ilc\Assets\StoreLogo.png: 90BD194CA4A7CFFF3E8B8222229857FB
-SibleyHoloLens\bin\x86\Master\ilc\Assets\Wide310x150Logo.scale-200.png: C96846A80DF667F87355569CD816192D
-SibleyHoloLens\obj\x86\Master\ilc\in\Assets\SplashScreen.scale-200.png: 60618416282ED104FD1473935716045D
-SibleyHoloLens\obj\x86\Master\ilc\in\Assets\Square150x150Logo.scale-200.png: E02834B4A5DFB97FF8E212C1CACBB084
-SibleyHoloLens\obj\x86\Master\ilc\in\Assets\Square44x44Logo.scale-200.png: 6C6EF27184ABE9D870A9D564953775DE
-SibleyHoloLens\obj\x86\Master\ilc\in\Assets\Square44x44Logo.targetsize-24_altform-unplated.png: 156637F7B5363E983E7A46D8E533A23D
-SibleyHoloLens\obj\x86\Master\ilc\in\Assets\StoreLogo.png: 90BD194CA4A7CFFF3E8B8222229857FB
-SibleyHoloLens\obj\x86\Master\ilc\in\Assets\Wide310x150Logo.scale-200.png: C96846A80DF667F87355569CD816192D
-SibleyHoloLens\obj\x86\Master\ilc\in\Properties\Default.rd.xml: 72EB282657164E79A1C42F6240984826
-SibleyHoloLens\Properties\AssemblyInfo.cs: D104D6165861162171E1A2F003E09AFC
-SibleyHoloLens\Properties\Default.rd.xml: 72EB282657164E79A1C42F6240984826
+Sibley Chapel.sln: modified
+Sibley Chapel\App.cs: B2096F2B5E3C9FE0AA7AEB259E4FE187
+Sibley Chapel\Package.appxmanifest: 5A1C44703766037849B602073EB941E3
+Sibley Chapel\project.json: 1D02BC64BAC0D041019673A1C4C51737
+Sibley Chapel\Sibley Chapel.csproj: modified
+Sibley Chapel\Sibley Chapel.csproj.user: modified
+Sibley Chapel\Assets\SplashScreen.scale-200.png: 60618416282ED104FD1473935716045D
+Sibley Chapel\Assets\Square150x150Logo.scale-200.png: E02834B4A5DFB97FF8E212C1CACBB084
+Sibley Chapel\Assets\Square44x44Logo.scale-200.png: 6C6EF27184ABE9D870A9D564953775DE
+Sibley Chapel\Assets\Square44x44Logo.targetsize-24_altform-unplated.png: 156637F7B5363E983E7A46D8E533A23D
+Sibley Chapel\Assets\StoreLogo.png: 90BD194CA4A7CFFF3E8B8222229857FB
+Sibley Chapel\Assets\Wide310x150Logo.scale-200.png: C96846A80DF667F87355569CD816192D
+Sibley Chapel\Properties\AssemblyInfo.cs: B631BFF94FE9B241D29E1771EC7A2ACC
+Sibley Chapel\Properties\Default.rd.xml: 72EB282657164E79A1C42F6240984826

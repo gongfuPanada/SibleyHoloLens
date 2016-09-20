@@ -4,5 +4,6 @@
         <UnityWSAPlayerDir>E:\Unity HoloLens 5.4.0f3-HTP\Editor\Data\PlaybackEngines\MetroSupport</UnityWSAPlayerDir>
         <UnityWSAToolsDir>$(SolutionDir)Unity\Tools</UnityWSAToolsDir>
         <UnityProjectDir>D:\Documents\VR\SibleyHoloLens</UnityProjectDir>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 </Project>

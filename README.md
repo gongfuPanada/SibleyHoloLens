@@ -216,8 +216,20 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * Raw spatial data is pretty rough.
     * (continue)
 * Building 2D apps
-  * [Building 2D apps](https://developer.microsoft.com/en-us/windows/holographic/building_2d_apps)
-  * [Current limitations for apps using APIs from the shell](https://developer.microsoft.com/en-us/windows/holographic/current_limitations_for_apps_using_apis_from_the_shell)
+  * [Building 2D apps](https://developer.microsoft.com/en-us/windows/holographic/building_2d_apps) - (STM)
+    * Only concerning existing apps.
+  * [Current limitations for apps using APIs from the shell](https://developer.microsoft.com/en-us/windows/holographic/current_limitations_for_apps_using_apis_from_the_shell) - (STM)
+    * No support for:
+      * Notifications
+      * Share Contract
+      * Windows Shell localization (localization still available for apps)
+      * File explorer
+      * Toast API
+      * Contacts
+      * Calendars
+      * EmailRT and MessagingRT
+      * App services (for now)
+      * Printing-related operations
 * Building holographic apps with Unity
   * [Unity development overview](https://developer.microsoft.com/en-us/windows/holographic/unity_development_overview) - (STM)
     * Just covers basic setup again.
@@ -244,7 +256,8 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * Regenerate UWP Visual Studio solutions after Windows SDK or Unity upgrade.
     * Public class variables are editable in the Unity property grids.
   * Additional links
-    * [Camera](https://developer.microsoft.com/en-us/windows/holographic/camera_in_unity)
+    * [Camera](https://developer.microsoft.com/en-us/windows/holographic/camera_in_unity) - (STM)
+      * Content is a repeat of "Start a new Unity Project for Hololens".
     * [Gaze](https://developer.microsoft.com/en-us/windows/holographic/gaze_in_unity)
     * [Gestures](https://developer.microsoft.com/en-us/windows/holographic/gestures_in_unity)
     * [Voice Input](https://developer.microsoft.com/en-us/windows/holographic/voice_input_in_unity)
