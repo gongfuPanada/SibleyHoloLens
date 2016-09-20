@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Sibley Hospital
-  productName: SibleyHoloLens
+  productName: Sibley Chapel
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenStyle: 0
@@ -182,7 +182,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: 62168865361895a4ab7548899ecbc75c, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching: []
@@ -354,7 +354,7 @@ PlayerSettings:
   metroCertificateNotAfter: 80a25bdec026d301
   metroApplicationDescription: SibleyHoloLens
   wsaImages: {}
-  metroTileShortName: SibleyHoloLens
+  metroTileShortName: Sibley Chapel
   metroCommandLineArgsFile: 
   metroTileShowName: 0
   metroMediumTileShowName: 0
