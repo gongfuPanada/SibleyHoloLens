@@ -5,14 +5,34 @@ using UnityEngine.VR.WSA.Input;
 public class AirTapObjects : MonoBehaviour {
 
     GestureRecognizer gest;
+    GameObject currentGameObject;
 
 	// Use this for initialization
 	void Start () {
         gest = new GestureRecognizer();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        gest.SetRecognizableGestures(GestureSettings.Tap);
+        gest.TappedEvent += Gest_TappedEvent;
+    }
+
+    void OnDestroy()
+    {
+        gest.TappedEvent -= Gest_TappedEvent;
+    }
+
+    private void Gest_TappedEvent(InteractionSourceKind source, int tapCount, Ray headRay)
+    {
+        if(currentGameObject != null)
+        {
+            var mgr = currentGameObject.GetComponent<ReligionManager>();
+            if(mgr != null)
+            {
+                mgr.NextReligion();
+            }
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
         RaycastHit hit;
         if(Physics.Raycast(
             Camera.main.transform.position,
@@ -21,15 +41,16 @@ public class AirTapObjects : MonoBehaviour {
             Camera.main.farClipPlane,
             Physics.DefaultRaycastLayers))
         {
-            var mgr = hit.collider.gameObject.GetComponent<ReligionManager>();
-            if(mgr != null)
+            if(currentGameObject == null)
             {
-                mgr.NextReligion();
+                gest.StartCapturingGestures();
             }
-            else if(hit.collider.gameObject.name == "Sun")
-            {
-
-            }
+            currentGameObject = hit.collider.gameObject;
+        }
+        else
+        {
+            gest.StopCapturingGestures();
+            currentGameObject = null;
         }
 	}
 }
