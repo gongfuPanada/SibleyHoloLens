@@ -1,34 +1,46 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ReligionManager : MonoBehaviour
 {
-    private int lastReligionIndex;
-    public int religionIndex;
+    private int religionIndex;
+    private int numReligions;
     public GameObject[] icons;
+
+    public void NextReligion()
+    {
+        if(numReligions > 0)
+        {
+            religionIndex = (religionIndex + 1) % numReligions;
+        }
+    }
 
     // Use this for initialization
     void Start()
     {
-        lastReligionIndex = 0;
-        religionIndex = 1;
+        religionIndex = 0;
+        numReligions = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(lastReligionIndex != religionIndex)
+        if(icons != null)
         {
-            lastReligionIndex = religionIndex;
-            if(icons != null)
+            numReligions = int.MaxValue;
+            for(int i = 0; i < icons.Length; ++i)
             {
-                foreach(var icon in icons)
+                var icon = icons[i];
+                numReligions = Math.Min(numReligions, icon.transform.childCount);
+                for(int j = 0; j < icon.transform.childCount; ++j)
                 {
-                    for(int i = 0; i < icon.transform.childCount; ++i)
-                    {
-                        var child = icon.transform.GetChild(i);
-                        child.gameObject.SetActive(i == religionIndex);
-                    }
+                    var child = icon.transform.GetChild(j);
+                    child.gameObject.SetActive(j == religionIndex);
                 }
+            }
+            if(numReligions == int.MaxValue)
+            {
+                numReligions = 0;
             }
         }
     }
