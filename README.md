@@ -86,9 +86,10 @@ An augmented reality application using the Microsoft HoloLens where a person can
         * You can now access the Device Portal at https://<HOLOLENS_IP_ADDRESS>
   * After several seconds of deployment process, view the running app on the HoloLens.
 
-## TODO
+## READING (Mark your initials next to each entry when complete)
 
-### READING (Mark your initials next to each entry when complete)
+### WINDOWS HOLOGRAPHIC
+[Windows Holographic Documentation](https://developer.microsoft.com/en-us/windows/holographic/documentation) - (STM)
 * Understanding HoloLens
   * [Hologram](https://developer.microsoft.com/en-us/windows/holographic/hologram) - (STM)
   * [Hardware details](https://developer.microsoft.com/en-us/windows/holographic/hardware_details) - (STM)
@@ -109,7 +110,6 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * Bluetooth gamepads that are not the Xbox One S Wireless Controller will be hit-or-miss.
 * Developing for HoloLens
   * [Development overview](https://developer.microsoft.com/en-us/windows/holographic/development_overview) - (STM)
-    * [Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
   * [App model](https://developer.microsoft.com/en-us/windows/holographic/app_model) - (STM)
     * It's all just standard Universal Windows Platform apps.
     * Only one app runs at a time.
@@ -274,20 +274,29 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * D3D is the recommended build type over XAML because XAML apps sometimes fail to start. However, this also prevents use with the virtual keyboard.
     * Mixed Reality Capture is not supported.
     * Unity's "Play Mode" does not deploy to the HoloLens. Need to follow the normal, Visual Studio-based deployment process.
-* [Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
-  * [Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100) - (STM)
-    * Chapter 1 - Creating a default, empty, 3D project.
-    * Chapter 2 - Basic Scene Rendering settings.
-    * Chapter 3 - Making a cube.
-    * Chapter 4 - Project Settings.
-    * Chapter 5 - Deployment.
-  * [Holograms 101E - Introduction with Emulator](https://developer.microsoft.com/en-us/windows/holographic/holograms_101e)
-  * [Holograms 101 - Introduction with Device](https://developer.microsoft.com/en-us/windows/holographic/holograms_101)
-  * [Holograms 210 - Gaze](https://developer.microsoft.com/en-us/windows/holographic/holograms_210)
-  * [Holograms 211 - Gesture](https://developer.microsoft.com/en-us/windows/holographic/holograms_211)
-  * [Holograms 212 - Voice](https://developer.microsoft.com/en-us/windows/holographic/holograms_212)
-  * [Holograms 220 - Spatial sound](https://developer.microsoft.com/en-us/windows/holographic/holograms_220)
-  * [Holograms 230 - Spatial mapping](https://developer.microsoft.com/en-us/windows/holographic/holograms_230)
-  * [Holograms 240 - Sharing holograms](https://developer.microsoft.com/en-us/windows/holographic/holograms_240)
-* Other
-  * [Spatial Anchors](https://developer.microsoft.com/en-us/windows/holographic/spatial_anchors)
+
+[Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
+* [Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100) - (STM)
+  * Chapter 1 - Creating a default, empty, 3D project.
+  * Chapter 2 - Basic Scene Rendering settings.
+  * Chapter 3 - Making a cube.
+  * Chapter 4 - Project Settings.
+  * Chapter 5 - Deployment.
+* [Holograms 101E - Introduction with Emulator](https://developer.microsoft.com/en-us/windows/holographic/holograms_101e)
+* [Holograms 101 - Introduction with Device](https://developer.microsoft.com/en-us/windows/holographic/holograms_101)
+* [Holograms 210 - Gaze](https://developer.microsoft.com/en-us/windows/holographic/holograms_210)
+* [Holograms 211 - Gesture](https://developer.microsoft.com/en-us/windows/holographic/holograms_211)
+* [Holograms 212 - Voice](https://developer.microsoft.com/en-us/windows/holographic/holograms_212)
+* [Holograms 220 - Spatial sound](https://developer.microsoft.com/en-us/windows/holographic/holograms_220)
+* [Holograms 230 - Spatial mapping](https://developer.microsoft.com/en-us/windows/holographic/holograms_230)
+* [Holograms 240 - Sharing holograms](https://developer.microsoft.com/en-us/windows/holographic/holograms_240)
+
+Other
+* [Spatial Anchors](https://developer.microsoft.com/en-us/windows/holographic/spatial_anchors)
+
+### UNITY DOCUMENTATION
+[Unity Manual](https://docs.unity3d.com/Manual/index.html)
+* [Overview](https://docs.unity3d.com/Manual/UnityOverview.html)
+  * [Basics](*https://docs.unity3d.com/Manual/UnityBasics.html)
+
+[Unity Tutorials](https://unity3d.com/learn/tutorials)
