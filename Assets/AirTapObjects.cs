@@ -1,5 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VR.WSA;
 using UnityEngine.VR.WSA.Input;
 using UnityEngine.VR.WSA.Persistence;
 
@@ -42,6 +46,16 @@ public class AirTapObjects : MonoBehaviour
         if(target != null)
         {
             held = target;
+            var anchor = held.GetComponent<WorldAnchor>();
+            if(anchor != null)
+            {
+                var ids = anchorStore.GetAllIds();
+                if(anchorStore != null && ids.Contains(held.name))
+                {
+                    anchorStore.Delete(held.name);
+                }
+                DestroyImmediate(anchor);
+            }
             holdStart = held.transform.position;
             holdOffset = holdStart - pokerPosition;
         }
@@ -60,6 +74,11 @@ public class AirTapObjects : MonoBehaviour
     {
         if(held != null)
         {
+            var anchor = held.AddComponent<WorldAnchor>();
+            if(anchorStore != null && anchor != null)
+            {
+                anchorStore.Save(held.name, anchor);
+            }
             held = null;
         }
     }
@@ -67,6 +86,14 @@ public class AirTapObjects : MonoBehaviour
     void GotWorldAnchorStore(WorldAnchorStore store)
     {
         anchorStore = store;
+        var objs = FindObjectsOfType<GameObject>();
+        foreach(var obj in objs)
+        {
+            if(obj.name.StartsWith("Icon"))
+            {
+                var anchor = anchorStore.Load(obj.name, obj);
+            }
+        }
     }
 
     private void Gest_TappedEvent(InteractionSourceKind source, int tapCount, Ray headRay)
@@ -90,7 +117,7 @@ public class AirTapObjects : MonoBehaviour
             Camera.main.transform.forward,
             out hit,
             Camera.main.farClipPlane,
-            Physics.AllLayers))
+            Physics.AllLayers)) 
         {
             if(target == null)
             {
