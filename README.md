@@ -258,10 +258,10 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * Additional links
     * [Camera](https://developer.microsoft.com/en-us/windows/holographic/camera_in_unity) - (STM)
       * Content is a repeat of "Start a new Unity Project for Hololens".
-    * [Gaze](https://developer.microsoft.com/en-us/windows/holographic/gaze_in_unity)
-    * [Gestures](https://developer.microsoft.com/en-us/windows/holographic/gestures_in_unity)
+    * [Gaze](https://developer.microsoft.com/en-us/windows/holographic/gaze_in_unity) - (STM)
+    * [Gestures](https://developer.microsoft.com/en-us/windows/holographic/gestures_in_unity) - (STM)
     * [Voice Input](https://developer.microsoft.com/en-us/windows/holographic/voice_input_in_unity)
-    * [World Anchors](https://developer.microsoft.com/en-us/windows/holographic/world_anchor_in_unity)
+    * [World Anchors](https://developer.microsoft.com/en-us/windows/holographic/world_anchor_in_unity) - (STM)
     * [Persistence](https://developer.microsoft.com/en-us/windows/holographic/persistence_in_unity)
     * [Spatial Sound](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound_in_unity)
     * [Spatial Mapping](https://developer.microsoft.com/en-us/windows/holographic/spatial_mapping_in_unity)
@@ -274,7 +274,7 @@ An augmented reality application using the Microsoft HoloLens where a person can
   * [Designing for mixed reality](https://developer.microsoft.com/en-us/windows/holographic/designing_for_mixed_reality)
   * [Types of holographic apps](https://developer.microsoft.com/en-us/windows/holographic/types_of_holographic_apps)
   * [Cursor](https://developer.microsoft.com/en-us/windows/holographic/cursors)
-  * [Gaze targeting](https://developer.microsoft.com/en-us/windows/holographic/gaze_targeting)
+  * [Gaze targeting](https://developer.microsoft.com/en-us/windows/holographic/gaze_targeting) - (STM)
   * [Gesture design](https://developer.microsoft.com/en-us/windows/holographic/gesture_design)
   * [Voice design](https://developer.microsoft.com/en-us/windows/holographic/voice_design)
   * [Spatial sound design](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound_design)
@@ -308,8 +308,11 @@ Other
 * [Spatial Anchors](https://developer.microsoft.com/en-us/windows/holographic/spatial_anchors)
 
 ### UNITY DOCUMENTATION
-[Unity Manual](https://docs.unity3d.com/Manual/index.html)
-* [Overview](https://docs.unity3d.com/Manual/UnityOverview.html)
-  * [Basics](*https://docs.unity3d.com/Manual/UnityBasics.html)
+[Unity Manual](https://docs.unity3d.com/Manual/index.html) - (STM)
+* [Overview](https://docs.unity3d.com/Manual/UnityOverview.html) - (STM)
+  * [Basics](https://docs.unity3d.com/Manual/UnityBasics.html) - (STM)
+  * [Asset Workflow](https://docs.unity3d.com/Manual/AssetWorkflow.html) - (STM)
+    * You can just copy files to the asset folder on your hard drive to bulk-import.
+  * [The Main Windows](https://docs.unity3d.com/Manual/UsingTheEditor.html) - (STM)
 
 [Unity Tutorials](https://unity3d.com/learn/tutorials)

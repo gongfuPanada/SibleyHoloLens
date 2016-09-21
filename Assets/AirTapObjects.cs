@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VR.WSA.Input;
+using UnityEngine.VR.WSA.Persistence;
 
-public class AirTapObjects : MonoBehaviour {
+public class AirTapObjects : MonoBehaviour
+{
+    public GameObject selector, cursor;
 
     GestureRecognizer gest;
-    GameObject currentGameObject;
+    GameObject target;
+    WorldAnchorStore anchorStore;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         gest = new GestureRecognizer();
         gest.SetRecognizableGestures(GestureSettings.Tap | GestureSettings.ManipulationTranslate);
         gest.TappedEvent += Gest_TappedEvent;
@@ -16,6 +21,12 @@ public class AirTapObjects : MonoBehaviour {
         gest.ManipulationUpdatedEvent += Gest_ManipulationUpdatedEvent;
         gest.ManipulationCanceledEvent += Gest_ManipulationCanceledEvent;
         gest.ManipulationCompletedEvent += Gest_ManipulationCompletedEvent;
+        WorldAnchorStore.GetAsync(new WorldAnchorStore.GetAsyncDelegate(GotWorldAnchorStore));
+    }
+
+    void GotWorldAnchorStore(WorldAnchorStore store)
+    {
+        anchorStore = store;
     }
 
     private void Gest_ManipulationStartedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
@@ -45,9 +56,9 @@ public class AirTapObjects : MonoBehaviour {
 
     private void Gest_TappedEvent(InteractionSourceKind source, int tapCount, Ray headRay)
     {
-        if(currentGameObject != null)
+        if(target != null)
         {
-            var mgr = currentGameObject.GetComponent<ReligionManager>();
+            var mgr = target.GetComponent<ReligionManager>();
             if(mgr != null)
             {
                 mgr.NextReligion();
@@ -56,25 +67,32 @@ public class AirTapObjects : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         RaycastHit hit;
         if(Physics.Raycast(
             Camera.main.transform.position,
             Camera.main.transform.forward,
             out hit,
             Camera.main.farClipPlane,
-            Physics.DefaultRaycastLayers))
+            Physics.AllLayers))
         {
-            if(currentGameObject == null)
+            if(target == null)
             {
                 gest.StartCapturingGestures();
+                cursor.SetActive(false);
+                selector.SetActive(true);
             }
-            currentGameObject = hit.collider.gameObject;
+            target = hit.collider.gameObject;
+            selector.transform.position = hit.point;
+            selector.transform.LookAt(hit.point + hit.normal);
         }
-        else
+        else if(target != null)
         {
             gest.StopCapturingGestures();
-            currentGameObject = null;
+            cursor.SetActive(true);
+            selector.SetActive(false);
+            target = null;
         }
-	}
+    }
 }
