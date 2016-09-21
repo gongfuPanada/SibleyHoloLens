@@ -5,53 +5,68 @@ using UnityEngine.VR.WSA.Persistence;
 
 public class AirTapObjects : MonoBehaviour
 {
-    public GameObject selector, cursor;
+    public GameObject selector, cursor, mover;
 
     GestureRecognizer gest;
-    GameObject target;
+    GameObject target, held;
     WorldAnchorStore anchorStore;
+    Vector3 holdStart, holdOffset;    
 
-    // Use this for initialization
+    void OnDestroy()
+    {
+        gest.TappedEvent -= Gest_TappedEvent;
+        gest.HoldStartedEvent -= Gest_HoldStartedEvent;
+        gest.HoldCanceledEvent -= Gest_HoldCanceledEvent;
+    }
     void Start()
     {
         gest = new GestureRecognizer();
-        gest.SetRecognizableGestures(GestureSettings.Tap | GestureSettings.ManipulationTranslate);
+        gest.SetRecognizableGestures(GestureSettings.Tap | GestureSettings.Hold);
         gest.TappedEvent += Gest_TappedEvent;
-        gest.ManipulationStartedEvent += Gest_ManipulationStartedEvent;
-        gest.ManipulationUpdatedEvent += Gest_ManipulationUpdatedEvent;
-        gest.ManipulationCanceledEvent += Gest_ManipulationCanceledEvent;
-        gest.ManipulationCompletedEvent += Gest_ManipulationCompletedEvent;
+        gest.HoldStartedEvent += Gest_HoldStartedEvent;
+        gest.HoldCanceledEvent += Gest_HoldCanceledEvent;
+        gest.HoldCompletedEvent += Gest_HoldCompletedEvent;
         WorldAnchorStore.GetAsync(new WorldAnchorStore.GetAsyncDelegate(GotWorldAnchorStore));
+    }
+
+    Vector3 pokerPosition
+    {
+        get
+        {
+            return Camera.main.transform.position + Camera.main.transform.forward * 2;
+        }
+    }
+
+    private void Gest_HoldStartedEvent(InteractionSourceKind source, Ray headRay)
+    {
+        if(target != null)
+        {
+            held = target;
+            holdStart = held.transform.position;
+            holdOffset = holdStart - pokerPosition;
+        }
+    }
+
+    private void Gest_HoldCanceledEvent(InteractionSourceKind source, Ray headRay)
+    {
+        if(held != null)
+        {
+            held.transform.position = holdStart;
+            held = null;
+        }
+    }
+
+    private void Gest_HoldCompletedEvent(InteractionSourceKind source, Ray headRay)
+    {
+        if(held != null)
+        {
+            held = null;
+        }
     }
 
     void GotWorldAnchorStore(WorldAnchorStore store)
     {
         anchorStore = store;
-    }
-
-    private void Gest_ManipulationStartedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
-    {
-    }
-
-    private void Gest_ManipulationUpdatedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
-    {
-    }
-
-    private void Gest_ManipulationCanceledEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
-    {
-    }
-
-    private void Gest_ManipulationCompletedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
-    {
-    }
-
-    void OnDestroy()
-    {
-        gest.TappedEvent -= Gest_TappedEvent;
-        gest.ManipulationStartedEvent -= Gest_ManipulationStartedEvent;
-        gest.ManipulationUpdatedEvent -= Gest_ManipulationUpdatedEvent;
-        gest.ManipulationCanceledEvent -= Gest_ManipulationCanceledEvent;
-        gest.ManipulationCompletedEvent -= Gest_ManipulationCompletedEvent;
     }
 
     private void Gest_TappedEvent(InteractionSourceKind source, int tapCount, Ray headRay)
@@ -80,19 +95,33 @@ public class AirTapObjects : MonoBehaviour
             if(target == null)
             {
                 gest.StartCapturingGestures();
-                cursor.SetActive(false);
-                selector.SetActive(true);
             }
             target = hit.collider.gameObject;
-            selector.transform.position = hit.point;
-            selector.transform.LookAt(hit.point + hit.normal);
+            while(target.transform.parent != null)
+            {
+                target = target.transform.parent.gameObject;
+            }
+            var obj = held == null ? selector : mover;
+            obj.transform.position = hit.point;
+            obj.transform.LookAt(hit.point + hit.normal);
         }
         else if(target != null)
         {
             gest.StopCapturingGestures();
-            cursor.SetActive(true);
-            selector.SetActive(false);
             target = null;
         }
+
+        if(held != null)
+        {
+            held.transform.position = pokerPosition + holdOffset;
+            held.transform.LookAt(Camera.main.transform);
+            var eu = held.transform.eulerAngles;
+            eu.x = 0;
+            held.transform.eulerAngles = eu;
+        }
+
+        cursor.SetActive(target == null && held == null);
+        selector.SetActive(target != null && held == null);
+        mover.SetActive(target != null && held != null);
     }
 }
