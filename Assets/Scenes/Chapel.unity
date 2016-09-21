@@ -95,7 +95,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 696099763}
+    m_TransformParent: {fileID: 1262381278}
     m_Modifications:
     - target: {fileID: 400002, guid: 9992470d3aa774f4a8f1f92d4bdb47d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -127,7 +127,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9992470d3aa774f4a8f1f92d4bdb47d1, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 9992470d3aa774f4a8f1f92d4bdb47d1, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -145,6 +145,14 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 9992470d3aa774f4a8f1f92d4bdb47d1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9992470d3aa774f4a8f1f92d4bdb47d1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9992470d3aa774f4a8f1f92d4bdb47d1, type: 3}
   m_IsPrefabParent: 0
@@ -157,7 +165,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 605728747}
+    m_TransformParent: {fileID: 939174780}
     m_Modifications:
     - target: {fileID: 400002, guid: b1de0ce9a9cd7dc45bd036ee43e0e807, type: 3}
       propertyPath: m_LocalPosition.x
@@ -211,6 +219,14 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: b1de0ce9a9cd7dc45bd036ee43e0e807, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b1de0ce9a9cd7dc45bd036ee43e0e807, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1de0ce9a9cd7dc45bd036ee43e0e807, type: 3}
   m_IsPrefabParent: 0
@@ -219,7 +235,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1483291785}
+    m_TransformParent: {fileID: 1262381278}
     m_Modifications:
     - target: {fileID: 400000, guid: dbe2b7210c9f40a47a18062c76ab94e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -265,73 +281,23 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: dbe2b7210c9f40a47a18062c76ab94e0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: dbe2b7210c9f40a47a18062c76ab94e0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbe2b7210c9f40a47a18062c76ab94e0, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &605728746
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 605728747}
-  m_Layer: 0
-  m_Name: Judaism
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &605728747
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 605728746}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1471574179}
-  m_Father: {fileID: 939174780}
-  m_RootOrder: 1
---- !u!1 &696099762
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 696099763}
-  m_Layer: 0
-  m_Name: Judaism
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &696099763
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 696099762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 946525646}
-  m_Father: {fileID: 1262381278}
-  m_RootOrder: 1
 --- !u!1001 &707526404
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1427450529}
+    m_TransformParent: {fileID: 1329301792}
     m_Modifications:
     - target: {fileID: 400002, guid: 7b4a4826b6db4e94098383104ea6f8ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -381,6 +347,14 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -0.16
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 7b4a4826b6db4e94098383104ea6f8ac, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7b4a4826b6db4e94098383104ea6f8ac, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b4a4826b6db4e94098383104ea6f8ac, type: 3}
   m_IsPrefabParent: 0
@@ -389,7 +363,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1353217147}
+    m_TransformParent: {fileID: 1329301792}
     m_Modifications:
     - target: {fileID: 400002, guid: 75d41df4a69119e46a8419f169a746a2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -421,7 +395,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 75d41df4a69119e46a8419f169a746a2, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 75d41df4a69119e46a8419f169a746a2, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -443,38 +417,17 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 75d41df4a69119e46a8419f169a746a2, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 75d41df4a69119e46a8419f169a746a2, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75d41df4a69119e46a8419f169a746a2, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &922883255
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 922883256}
-  m_Layer: 0
-  m_Name: Christianity
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &922883256
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 922883255}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 339624954}
-  m_Father: {fileID: 939174780}
-  m_RootOrder: 0
 --- !u!1 &939174779
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,8 +454,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 922883256}
-  - {fileID: 605728747}
+  - {fileID: 1471574179}
+  - {fileID: 339624954}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!4 &946525646 stripped
@@ -602,8 +555,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1483291785}
-  - {fileID: 696099763}
+  - {fileID: 1253767638}
+  - {fileID: 946525646}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &1329301791
@@ -632,101 +585,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1427450529}
-  - {fileID: 1353217147}
+  - {fileID: 1687085666}
+  - {fileID: 2011975523}
   m_Father: {fileID: 0}
   m_RootOrder: 5
---- !u!1 &1353217146
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1353217147}
-  m_Layer: 0
-  m_Name: Judaism
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1353217147
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1353217146}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 2011975523}
-  m_Father: {fileID: 1329301792}
-  m_RootOrder: 1
---- !u!1 &1427450528
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1427450529}
-  m_Layer: 0
-  m_Name: Christianity
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1427450529
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1427450528}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1687085666}
-  m_Father: {fileID: 1329301792}
-  m_RootOrder: 0
 --- !u!4 &1471574179 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: b1de0ce9a9cd7dc45bd036ee43e0e807, type: 3}
   m_PrefabInternal: {fileID: 348098436}
---- !u!1 &1483291784
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1483291785}
-  m_Layer: 0
-  m_Name: Christianity
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1483291785
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1483291784}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1253767638}
-  m_Father: {fileID: 1262381278}
-  m_RootOrder: 0
 --- !u!1 &1657509120
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,7 +641,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -932,7 +798,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 922883256}
+    m_TransformParent: {fileID: 939174780}
     m_Modifications:
     - target: {fileID: 400002, guid: 2e100d6d9e945a742869f06a981b2b6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -964,7 +830,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2e100d6d9e945a742869f06a981b2b6d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 2e100d6d9e945a742869f06a981b2b6d, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -981,6 +847,14 @@ Prefab:
     - target: {fileID: 400000, guid: 2e100d6d9e945a742869f06a981b2b6d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 2e100d6d9e945a742869f06a981b2b6d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2e100d6d9e945a742869f06a981b2b6d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e100d6d9e945a742869f06a981b2b6d, type: 3}
@@ -1015,10 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5afd03d345557489aed52d5e291e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icons:
-  - {fileID: 1262381277}
-  - {fileID: 939174779}
-  - {fileID: 1329301791}
+  numReligions: 2
 --- !u!23 &2137603232
 MeshRenderer:
   m_ObjectHideFlags: 0

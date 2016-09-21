@@ -3,9 +3,7 @@ using UnityEngine;
 
 public class ReligionManager : MonoBehaviour
 {
-    private int religionIndex;
-    private int numReligions;
-    public GameObject[] icons;
+    int religionIndex, numReligions;
 
     public void NextReligion()
     {
@@ -18,30 +16,19 @@ public class ReligionManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        religionIndex = 0;
-        numReligions = 0;
+        //user defined layers start with layer 8 and unity supports 32 layers
+        for(int i = 8; i < 32; i++) 
+        {
+            if(LayerMask.LayerToName(i).Length > 0)
+            {
+                ++numReligions;
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(icons != null)
-        {
-            numReligions = int.MaxValue;
-            for(int i = 0; i < icons.Length; ++i)
-            {
-                var icon = icons[i];
-                numReligions = Math.Min(numReligions, icon.transform.childCount);
-                for(int j = 0; j < icon.transform.childCount; ++j)
-                {
-                    var child = icon.transform.GetChild(j);
-                    child.gameObject.SetActive(j == religionIndex);
-                }
-            }
-            if(numReligions == int.MaxValue)
-            {
-                numReligions = 0;
-            }
-        }
+        Camera.main.cullingMask = (1 << (religionIndex + 8)) | 0x0f;
     }
 }
