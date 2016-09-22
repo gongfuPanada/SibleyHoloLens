@@ -1,27 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.VR.WSA;
 using UnityEngine.VR.WSA.Input;
 using UnityEngine.VR.WSA.Persistence;
 
 public class AirTapObjects : MonoBehaviour
 {
-    public GameObject selector, cursor, mover;
-
     GestureRecognizer gest;
     GameObject target, held;
     WorldAnchorStore anchorStore;
-    Vector3 holdStart, holdOffset;    
+    Vector3 holdStart, holdOffset;
+    GazeFollower gaze;
 
     void OnDestroy()
     {
         gest.TappedEvent -= Gest_TappedEvent;
         gest.HoldStartedEvent -= Gest_HoldStartedEvent;
         gest.HoldCanceledEvent -= Gest_HoldCanceledEvent;
+        gest.HoldCompletedEvent -= Gest_HoldCompletedEvent;
     }
+
     void Start()
     {
         gest = new GestureRecognizer();
@@ -31,19 +29,12 @@ public class AirTapObjects : MonoBehaviour
         gest.HoldCanceledEvent += Gest_HoldCanceledEvent;
         gest.HoldCompletedEvent += Gest_HoldCompletedEvent;
         WorldAnchorStore.GetAsync(new WorldAnchorStore.GetAsyncDelegate(GotWorldAnchorStore));
-    }
-
-    Vector3 pokerPosition
-    {
-        get
-        {
-            return Camera.main.transform.position + Camera.main.transform.forward * 2;
-        }
+        gaze = GetComponentInChildren<GazeFollower>();
     }
 
     private void Gest_HoldStartedEvent(InteractionSourceKind source, Ray headRay)
     {
-        if(target != null)
+        if(target != null && target.name.StartsWith("Icon"))
         {
             held = target;
             var anchor = held.GetComponent<WorldAnchor>();
@@ -57,7 +48,7 @@ public class AirTapObjects : MonoBehaviour
                 DestroyImmediate(anchor);
             }
             holdStart = held.transform.position;
-            holdOffset = holdStart - pokerPosition;
+            holdOffset = holdStart - PointerPosition;
         }
     }
 
@@ -91,7 +82,7 @@ public class AirTapObjects : MonoBehaviour
         {
             if(obj.name.StartsWith("Icon"))
             {
-                var anchor = anchorStore.Load(obj.name, obj);
+                anchorStore.Load(obj.name, obj);
             }
         }
     }
@@ -100,10 +91,10 @@ public class AirTapObjects : MonoBehaviour
     {
         if(target != null)
         {
-            var mgr = target.GetComponent<ReligionManager>();
-            if(mgr != null)
+            var tapper = target.GetComponent<TapHandler>();
+            if(tapper != null)
             {
-                mgr.NextReligion();
+                tapper.Tap(this);
             }
         }
     }
@@ -111,44 +102,84 @@ public class AirTapObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        if(Physics.Raycast(
+        RaycastHit selectedObject;
+
+        bool objectHit = Physics.Raycast(
             Camera.main.transform.position,
             Camera.main.transform.forward,
-            out hit,
-            Camera.main.farClipPlane,
-            Physics.AllLayers)) 
+            out selectedObject,
+            30.0f,
+            Physics.AllLayers);
+
+        if(objectHit)
         {
             if(target == null)
             {
                 gest.StartCapturingGestures();
             }
-            target = hit.collider.gameObject;
+            target = selectedObject.collider.gameObject;
             while(target.transform.parent != null)
             {
+                var tapper = target.GetComponent<TapHandler>();
+                if(tapper != null)
+                {
+                    break;
+                }
                 target = target.transform.parent.gameObject;
             }
-            var obj = held == null ? selector : mover;
-            obj.transform.position = hit.point;
-            obj.transform.LookAt(hit.point + hit.normal);
+            MovePointer(selectedObject.point, selectedObject.normal);
         }
-        else if(target != null)
+        else
         {
-            gest.StopCapturingGestures();
-            target = null;
+            if(!objectHit && target != null && held == null)
+            {
+                gest.StopCapturingGestures();
+                target = null;
+            }
+            MovePointer(PointerPosition, -Camera.main.transform.forward);
         }
 
         if(held != null)
         {
-            held.transform.position = pokerPosition + holdOffset;
+            held.transform.position = PointerPosition + holdOffset;
             held.transform.LookAt(Camera.main.transform);
             var eu = held.transform.eulerAngles;
             eu.x = 0;
             held.transform.eulerAngles = eu;
         }
 
-        cursor.SetActive(target == null && held == null);
-        selector.SetActive(target != null && held == null);
-        mover.SetActive(target != null && held != null);
+        if(!objectHit && held == null)
+        {
+            gaze.SelectedIndex = 0;
+        }
+        else if(objectHit && held == null)
+        {
+            gaze.SelectedIndex = 1;
+        }
+        else if(held != null)
+        {
+            gaze.SelectedIndex = 2;
+        }
+    }
+
+    void MovePointer(Vector3 point, Vector3 normal)
+    {
+        gaze.transform.position = point;
+        gaze.transform.LookAt(point + normal);
+        HolographicSettings.SetFocusPointForFrame(point, -Camera.main.transform.forward);
+    }
+
+    Vector3 PointerPosition
+    {
+        get
+        {
+            var vector = Camera.main.transform.forward;
+            vector.y = 0;
+            var len1 = vector.magnitude;
+            vector.Normalize();
+            var len2 = vector.magnitude;
+            var scale = 2 * len2 / len1;
+            return Camera.main.transform.position + scale * Camera.main.transform.forward;
+        }
     }
 }

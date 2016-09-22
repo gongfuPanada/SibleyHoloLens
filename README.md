@@ -257,18 +257,17 @@ An augmented reality application using the Microsoft HoloLens where a person can
     * Public class variables are editable in the Unity property grids.
   * Additional links
     * [Camera](https://developer.microsoft.com/en-us/windows/holographic/camera_in_unity) - (STM)
-      * Content is a repeat of "Start a new Unity Project for Hololens".
     * [Gaze](https://developer.microsoft.com/en-us/windows/holographic/gaze_in_unity) - (STM)
     * [Gestures](https://developer.microsoft.com/en-us/windows/holographic/gestures_in_unity) - (STM)
     * [Voice Input](https://developer.microsoft.com/en-us/windows/holographic/voice_input_in_unity)
     * [World Anchors](https://developer.microsoft.com/en-us/windows/holographic/world_anchor_in_unity) - (STM)
-    * [Persistence](https://developer.microsoft.com/en-us/windows/holographic/persistence_in_unity)
-    * [Spatial Sound](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound_in_unity)
+    * [Persistence](https://developer.microsoft.com/en-us/windows/holographic/persistence_in_unity) - (STM)
+    * [Spatial Sound](https://developer.microsoft.com/en-us/windows/holographic/spatial_sound_in_unity) - (STM)
     * [Spatial Mapping](https://developer.microsoft.com/en-us/windows/holographic/spatial_mapping_in_unity)
     * [Shared Holograms](https://developer.microsoft.com/en-us/windows/holographic/shared_holographic_experiences_in_unity)
-    * [Locatable Camera](https://developer.microsoft.com/en-us/windows/holographic/locatable_camera_in_unity)
-    * [Focus Point](https://developer.microsoft.com/en-us/windows/holographic/focus_point_in_unity)
-    * [Tracking Loss](https://developer.microsoft.com/en-us/windows/holographic/tracking_loss_in_unity)
+    * [Locatable Camera](https://developer.microsoft.com/en-us/windows/holographic/locatable_camera_in_unity) - (STM)
+    * [Focus Point](https://developer.microsoft.com/en-us/windows/holographic/focus_point_in_unity) - (STM)
+    * [Tracking Loss](https://developer.microsoft.com/en-us/windows/holographic/tracking_loss_in_unity) - (STM)
     * [Keyboard Input](https://developer.microsoft.com/en-us/windows/holographic/keyboard_input_in_unity)
 * Designing holograms
   * [Designing for mixed reality](https://developer.microsoft.com/en-us/windows/holographic/designing_for_mixed_reality)
