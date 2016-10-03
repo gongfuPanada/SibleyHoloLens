@@ -13,17 +13,4 @@ public class TapHandler : MonoBehaviour
             OnTap(source, EventArgs.Empty);
         }
     }
-
-    // Use this for initialization
-    void Start()
-    {
-        var tv = transform.localPosition;
-        tv.z = 2;
-        transform.localPosition = tv;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }

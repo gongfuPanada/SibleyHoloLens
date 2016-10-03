@@ -177,8 +177,7 @@ public class AirTapObjects : MonoBehaviour
             vector.y = 0;
             var len1 = vector.magnitude;
             vector.Normalize();
-            var len2 = vector.magnitude;
-            var scale = 2 * len2 / len1;
+            var scale = 1.0f / len1;
             return Camera.main.transform.position + scale * Camera.main.transform.forward;
         }
     }
