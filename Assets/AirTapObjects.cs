@@ -11,6 +11,9 @@ public class AirTapObjects : MonoBehaviour
     WorldAnchorStore anchorStore;
     Vector3 holdStart, holdOffset;
     GazeFollower gaze;
+    GameObject ui;
+    const int PHYSICS_LAYER = 0x1 << 31;
+    const int NOT_PHYSICS_LAYER = ~PHYSICS_LAYER;
 
     void OnDestroy()
     {
@@ -30,6 +33,7 @@ public class AirTapObjects : MonoBehaviour
         gest.HoldCompletedEvent += Gest_HoldCompletedEvent;
         WorldAnchorStore.GetAsync(new WorldAnchorStore.GetAsyncDelegate(GotWorldAnchorStore));
         gaze = GetComponentInChildren<GazeFollower>();
+        ui = GameObject.Find("UI");
     }
 
     private void Gest_HoldStartedEvent(InteractionSourceKind source, Ray headRay)
@@ -48,7 +52,8 @@ public class AirTapObjects : MonoBehaviour
                 DestroyImmediate(anchor);
             }
             holdStart = held.transform.position;
-            holdOffset = holdStart - PointerPosition;
+            holdOffset = holdStart - gaze.transform.position;
+            ui.SetActive(false);
         }
     }
 
@@ -58,6 +63,7 @@ public class AirTapObjects : MonoBehaviour
         {
             held.transform.position = holdStart;
             held = null;
+            ui.SetActive(true);
         }
     }
 
@@ -71,6 +77,7 @@ public class AirTapObjects : MonoBehaviour
                 anchorStore.Save(held.name, anchor);
             }
             held = null;
+            ui.SetActive(true);
         }
     }
 
@@ -102,14 +109,22 @@ public class AirTapObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit selectedObject;
+        RaycastHit selectedObject,
+            selectedGround;
 
         bool objectHit = Physics.Raycast(
             Camera.main.transform.position,
             Camera.main.transform.forward,
             out selectedObject,
-            30.0f,
-            Physics.AllLayers);
+            5.0f,
+            NOT_PHYSICS_LAYER);
+
+        bool groundHit = Physics.Raycast(
+            Camera.main.transform.position,
+            Camera.main.transform.forward,
+            out selectedGround,
+            6.0f,
+            PHYSICS_LAYER);
 
         if(objectHit)
         {
@@ -127,7 +142,14 @@ public class AirTapObjects : MonoBehaviour
                 }
                 target = target.transform.parent.gameObject;
             }
-            MovePointer(selectedObject.point, selectedObject.normal);
+            if(held != null && groundHit)
+            {
+                MovePointer(selectedGround.point + 0.01f * selectedGround.normal, selectedGround.normal);
+            }
+            else
+            {
+                MovePointer(selectedObject.point, selectedObject.normal);
+            }
         }
         else
         {
@@ -136,12 +158,24 @@ public class AirTapObjects : MonoBehaviour
                 gest.StopCapturingGestures();
                 target = null;
             }
-            MovePointer(PointerPosition, -Camera.main.transform.forward);
+            if(groundHit)
+            {
+                MovePointer(selectedGround.point + 0.01f * selectedGround.normal, selectedGround.normal);
+            }
+            else
+            {
+                var vector = Camera.main.transform.forward;
+                vector.y = 0;
+                var len1 = vector.magnitude;
+                vector.Normalize();
+                var scale = 1.0f / len1;
+                MovePointer(Camera.main.transform.position + scale * Camera.main.transform.forward, -Camera.main.transform.forward);
+            }
         }
 
         if(held != null)
         {
-            held.transform.position = PointerPosition + holdOffset;
+            held.transform.position = gaze.transform.position + holdOffset;
             held.transform.LookAt(Camera.main.transform);
             var eu = held.transform.eulerAngles;
             eu.x = 0;
@@ -167,18 +201,5 @@ public class AirTapObjects : MonoBehaviour
         gaze.transform.position = point;
         gaze.transform.LookAt(point + normal);
         HolographicSettings.SetFocusPointForFrame(point, -Camera.main.transform.forward);
-    }
-
-    Vector3 PointerPosition
-    {
-        get
-        {
-            var vector = Camera.main.transform.forward;
-            vector.y = 0;
-            var len1 = vector.magnitude;
-            vector.Normalize();
-            var scale = 1.0f / len1;
-            return Camera.main.transform.position + scale * Camera.main.transform.forward;
-        }
     }
 }

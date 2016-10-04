@@ -55,7 +55,9 @@ public class ResetPosition : MonoBehaviour
             for(int i = 0; i < icons.Count; ++i)
             {
                 var obj = icons[i];
-                obj.transform.position = new Vector3(1.5f * (i - d), 0, 2f) + Camera.main.transform.position;
+                var offset = Camera.main.transform.position + 1f * (i - d) * Camera.main.transform.right + 2 * Camera.main.transform.forward;
+                offset.y = 0;
+                obj.transform.position = offset;
                 obj.transform.LookAt(Camera.main.transform);
             }
             anchorStore.Clear();
@@ -65,11 +67,5 @@ public class ResetPosition : MonoBehaviour
     void GotWorldAnchorStore(WorldAnchorStore store)
     {
         anchorStore = store;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

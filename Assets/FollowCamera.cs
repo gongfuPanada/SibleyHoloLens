@@ -11,7 +11,7 @@ public class FollowCamera : MonoBehaviour
     {
         uiTurn = 0;
         maxY = 10;
-        maxX = 15;
+        maxX = 20;
     }
 
     // Update is called once per frame
